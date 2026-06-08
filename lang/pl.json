@@ -1,0 +1,444 @@
+{
+  "Select Language": "Wybór Języka",
+
+  "Correct and Controlled to Other": "Poprawne i Kontrolne do Innych",
+  
+  "Other": "Inne",
+
+  "Correct and Controlled": "Poprawne i Kontrolne",
+
+  "Incorrect": "Niepoprawne",
+
+  "Correct": "Poprawne",
+
+  "Correct to Incorrect": "Poprawne do Niepoprawnych",
+  
+  "Incorrect surveys": "Niepoprawne ankiety",
+
+  "Correct surveys": "Poprawne ankiety",
+
+  "Incomplete": "Wybrakowane",
+
+  "Filled": "Pełne",
+
+  "Filled to Incomplete": "Pełne do Wybrakowanych",
+  
+  "Incomplete surveys": "Wybrakowane ankiety",
+  
+  "Filled surveys": "Pełne ankiety",
+  
+  "All surveys": "Wszystkie ankiety",
+  
+  "Unfiltered data preview": "Podgląd wszystich danych",
+  
+  "Download.verb": "Pobierz",
+
+  "Download.noun": "Pobieranie",
+
+  "Reject invalid control questions": "Odrzuć nieprawidłowe pytania kontrolne",
+  
+  "Reject empty research questions": "Odrzuć puste pytania badawcze",
+
+  "Empty columns limit": "Limit pustych kolumn",
+  
+  "Data filtering": "Filtrowanie danych",
+
+  "Statistics": "Statystyki",
+  
+  "Downloading": "Pobieranie",
+
+  "Hello, :name in the admin backrooms.": "Witaj, :name na zapleczu administracyjnym.",
+
+  "Minute": "Minuta",
+
+  "Hour": "Godzina",
+
+  "Jan": "Sty",
+
+  "Feb": "Lut",
+
+  "Mar": "Mar",
+
+  "Apr": "Kwi",
+
+  "Jun": "Cze",
+
+  "Jul": "Lip",
+
+  "Aug": "Sie",
+
+  "Sep": "Wrz",
+
+  "Oct": "Paź",
+
+  "Nov": "Lis",
+
+  "Dec": "Gru",
+
+  "January": "Styczeń",
+
+  "February": "Luty",
+
+  "Marc": "Marzec",
+
+  "April": "Kwiecień",
+
+  "May": "Maj",
+
+  "June": "Czerwiec",
+
+  "July": "Lipiec",
+
+  "August": "Sierpień",
+
+  "September": "Wrzesień",
+
+  "October": "Październik",
+
+  "November": "Listopad",
+
+  "December": "Grudzień",
+
+  "Su": "Ni",
+
+  "Sa": "Sb",
+
+  "Fr": "Pt",
+
+  "Th": "Cz",
+
+  "We": "Śr",
+
+  "Tu": "Wt",
+
+  "Mo": "Pn",
+
+  "Sunday": "Niedziela",
+
+  "Saturday": "Sobota",
+
+  "Friday": "Piątek",
+
+  "Thursday": "Czwartek",
+
+  "Wednesday": "Środa",
+
+  "Tuesday": "Wtorek",
+
+  "Monday": "Poniedziałek",
+
+  "Sundays and Holidays": "Niedziele i Święta",
+
+  "Saturdays": "Soboty",
+
+  "Workdays": "Dni robocze",
+
+  "To:": "Do:",
+  
+  "The timetable for this line is inactive.": "Rozkład jazdy tej linii jest nieaktywny.",
+
+  "Pick a day": "Wybierz dzień",
+  
+  "Tourist.adjective": "Turystyczne",
+
+  "Night.adjective": "Nocne",
+
+  "Bus.adjective": "Autobusowe",
+  
+  "Tram.adjective.male": "Tramwajowy",
+
+  "Tram.adjective": "Tramwajowe",
+
+  "Please enter the credentials": "Proszę wprowadzić poświadczenia",
+
+  "Error occurred: please try restarting the browser.": "Wystąpił błąd. Proszę spróbować ponownie uruchomić przeglądarkę.",
+
+  "...": "...",
+
+  "<1": "<1",
+
+  "1-4": "1-4",
+
+  "5-8": "5-8",
+
+  "9+": "9+",
+
+  "About research": "O badaniu",
+
+  "About.survey": "O ankiecie",
+
+  "About survey": "O ankiecie",
+
+  "About technologies": "O technologiach",
+
+  "admin backend": "zaplecze administracyjne",
+
+  "and": "i",
+
+  "Android": "Android",
+
+  "Answer registered successfully.": "Odpowiedź została zarejestrowana pomyślnie.",
+
+  "Are you left or right-handed?": "Czy jesteś lewo, czy praworęczny?",
+
+  "Archival timetable data.": "Dane archiwalne z rozkładu jazdy.",
+
+  "Artificial intelligence models (chatgpt.com)": "Modele sztucznej inteligencji (chatgpt.com)",
+
+  "Authorization failed.": "Nie można zalogować.",
+
+  "Back to Survey": "Wróć do Ankiety",
+
+  "Backrooms": "Zaplecze",
+
+  "Banking": "Bankowość",
+
+  "Both.female": "Obie",
+
+  "bus": "autobus",
+
+  "Cannot register the answer, please try again.": "Nie można zarejestrować odpowiedzi, proszę spróbować ponownie.",
+
+  "Certain information": "Pewna informacja",
+
+  "Challenge": "Wyzwanie",
+
+  "Close": "Zamknij",
+
+  "Content sharing platform. Patterns used are named as follows: \"Leaves 2 Pattern\".":
+    "Platforma do dzielenia się treścią. Wykorzystano następujące wzorce: \"Leaves 2 Pattern\".",
+
+  "Desmos Graphing Calculator": "Kalkulator Wykresów Desmos",
+
+  "Do you suffer from a diagnosed color blindness?": "Czy posiadasz stwierdzony daltonizm?",
+
+  "Do you suffer from a visual impairment?": "Czy posiadasz wadę wzroku?",
+
+  "Do you use glasses or contact lenses?": "Czy nosisz okulary lub soczewki kontaktowe?",
+  
+  "Entertainment (netflix.com)": "Rozrywka (netflix.com)",
+
+  "Faculty of Environmental Engineering and Mechanical Engineering":
+    "Wydział Inżynierii Środowiska i Inżynierii Mechanicznej",
+
+  "Female": "Kobieta",
+  
+  "Finally, a few preferential questions.": "Na zakończenie kilka pytań preferencyjnych.",
+
+  "Finish": "Zakończ",
+
+  "First, I would like You to share some demographic and health-related information.":
+    "Najpierw, proszę o podzielenie się kilkoma informacjami demograficznymi oraz zdrowotnymi.",
+
+  "Fluent UI 2": "Fluent UI 2",
+
+  "For work/school related purposes": "W celach związanych z pracą/szkołą",
+
+  "Fontello": "Fontello",
+
+  "Good day, we would like to invite you to take part in the following survey, which is a foundation for conducting a scientific study for a master's thesis.":
+    "Dzień dobry, zapraszamy do wzięcia udziału w następującej ankiecie, która stanowi podstawę przeprowadzenia badania naukowego na poczet pracy magisterskiej.",
+
+  "holidays": "święta",
+
+  "How do I rate the accuracy of the information I have found in the timetable?":
+    "Jak oceniam dokładność informacji, którą znalazłem/am w rozkładzie jazdy?",
+
+  "How many times does :service_type :icon no. :line_no transit due the ':station_name' station on :time_period?":
+    "Ile razy w :time_period :service_type :icon nr :line_no kursuje w stronę pętli ':station_name'",
+
+  "I access websites mainly via:": "Korzystam ze stron internetowych głównie przez:",
+
+  "I don't know": "Nie wiem",
+
+  "I think I spend so many hours on the internet:": "Sądzę, że spędzam w internecie tyle godzin:",
+
+  "Iconography datasets.": "Ikonograficzne zestawy danych.",
+
+  "Information rather certain": "Informacja raczej pewna",
+
+  "Information rather uncertain": "Informacja raczej niepewna",
+
+  "Information Technology and Data Engineering": "Informatyka i Inżynieria Danych",
+
+  "iOS": "iOS",
+
+  "Education (khanacademy.org)": "Edukacja (khanacademy.org)",
+
+  "Encyclopedic information (wikipedia.org)": "Informacje encyklopedyczne (wikipedia.org)",
+
+  "Last question!": "Ostatnie pytanie!",
+
+  "Laravel": "Laravel",
+
+  "Left-handed": "Leworęczny",
+
+  "Line: :number": "Linia: :number",
+
+  "Livewire": "Livewire",
+
+  "loading, please wait...": "ładowanie, proszę czekać...",
+
+  "Log in": "Zaloguj",
+
+  "Log-in": "Logowanie",
+
+  "Login": "Login",
+
+  "Kacper Malicki": "Kacper Malicki",
+
+  "macOS": "macOS",
+
+  "Mail (gmail.com)": "Poczta (gmail.com)",
+
+  "Male": "Mężczyzna",
+
+  "Metro UI 5": "Metro UI 5",
+
+  "Modern (2017) user interface design system.": "Nowoczesny (2017) system projektowania interfejsów użytkownika.",
+
+  "My age:": "Mój wiek:",
+
+  "night.service": "linia nocna",
+
+  "No": "Nie",
+
+  "No data.": "Brak danych.",
+
+  "Node Package Manager": "Node Package Manager",
+
+  "Now, please complete the following challenges.": "Teraz proszę rozwiązać następujące wyzwania.",
+
+  "On which website was it faster to find the information?": "Na której stronie szybciej wyszukiwało się informacji?",
+
+  "Other.female": "Inne",
+
+  "Other.male": "Inny",
+
+  "Technology tool.": "Narzędzie technologiczne.",
+
+  "Thank You.I": "Dziękuję",
+
+  "Thank You.we": "Dziękujemy",
+
+  "Thank you for participating.": "Dziękuję za udział.",
+
+  "The password is incorrect": "Hasło jest niepoprawne",
+
+  "This website collects your browser name and operating system name for statistical and comparative purposes. Registration occurs after clicking the survey button.":
+    "Ta strona zapisuje nazwę przeglądarki oraz nazwę systemu operacyjnego w celach statystyczno-porównawczych. Rejestracja ma miejsce po kliknięciu przycisku otwierającego ankietę.",
+
+  "Password": "Hasło",
+
+  "Participation is voluntary, however it is important that each respondent partakes no more than once, filling all the survey fields.":
+    "Udział ma charakter dobrowolny, jest jednak istotne by każdy respondent odpowiadał najwyżej 1 raz wypełniając wszystkie pola ankiety.",
+
+  "Personal computer / Laptop": "Komputer stacjonarny / Laptop",
+
+  "Phone / Handheld device": "Telefon / Urządzenie naręczne",
+
+  "Please find information on a timetable by clicking here: :link and returning to the survey...":
+    "Proszę znaleźć informację o rozkładzie jazdy klikając tutaj: :link i wracając do ankiety...",
+
+  "Please find information concerning a timetable by clicking the link: :link and then returning to the survey...":
+    "Proszę znaleźć informację o rozkładzie jazdy klikając link: :link i później wracając do ankiety...",
+
+  "Poznań University of Life Sciences": "Uniwersytet Przyrodniczy w Poznaniu",
+
+  "Poznań Public Transport Authority": "Zarząd Transportu Publicznego w Poznaniu",
+
+  "Return": "Wróć",
+
+  "React.js": "React.js",
+
+  "Reactive websites framework, built with Laravel.": "Narzędzie do reaktywnych stron internetowych, współtworzone z Laravelem.",
+
+  "Remember me": "Pamiętaj mnie",
+
+  "Right-handed": "Praworęczny",
+
+  "saturdays": "soboty",
+
+  "Scientific information (scholar.google.com)": "Informacje naukowe (scholar.google.com)",
+
+  "Sex:": "Płeć fizyczna:",
+
+  "Similarly": "Podobnie",
+
+  "Social media (example: facebook.com)": "Media społecznościowe (przykładowo: facebook.com)",
+
+  "A new survey hasn't been created. Please try refreshing the page.":
+    "Nowa ankieta nie została utworzona. Prosimy spróbować odświeżyć stronę.",
+
+  "Start": "Rozpocznij",
+
+  "Stop: :from - :to": "Przystanek: :from - :to",
+
+  "sundays": "niedziele",
+
+  "sundays and holidays": "niedziele i święta",
+
+  "Survey": "Ankieta",
+  
+  "Tablet": "Tablet",
+
+  "The data will not be shared, commercialized or processed in any other way than for the purpose stated above.":
+    "Dane nie będą udostępniane, komercjalizowane lub w inny sposób przetwarzane niż do postawionego wyżej celu.",
+
+  "The survey concerns the problem of information searching on the Internet.":
+    "Ankieta dotyczy problematyki wyszukiwania informacji w Internecie.",
+
+  "The survey is intended to collect data for the purposes of a master's thesis in the field of Information Technology and Data Engineering.":
+    "Ankieta ma na celu pozyskiwanie danych na potrzeby realizacji pracy magisterskiej realizowanej na kierunku: Informatyka i Inżynieria Danych.",
+
+  "Timetable": "Rozkład",
+
+  "Toptal Subtle Patterns": "Toptal Subtle Patterns",
+
+  "tourist.line": "linia turystyczna",
+
+  "tram": "tramwaj",
+
+  "Unable to close the survey. This is optional anyways. Thank You for your time.":
+    "Nie można zamknąć ankiety. To i tak jest opcjonalne. Dziękujemy za poświęcony czas.",
+
+  "Uncertain information": "Niepewna informacja",
+
+  "Used to calculate animation timings.": "Użyty w celu oblieczenia czasów animacji.",
+
+  "Username": "Nazwa Użytkownika",
+
+  "Validation failed for: :validable": "Walidacja nie powiodła się dla: :validable",
+
+  "Prior user interface design language.": "Klasyczny język projektowania interfejsów użytkownika.",
+
+  "Web development framework.": "Narzędzie do tworzenia stron internetowych.",
+
+  "Web user interface framework.": "Narzędzie do tworzenia internetowych interfejsów użytkownika.",
+
+  "Website 1.": "Strona 1.",
+
+  "Website 2.": "Strona 2.",
+
+  "Website created for research purposes at the Poznań University of Life Sciences.":
+    "Strona wykonana na potrzeby badawcze na Uniwersytecie Przyrodniczym w Poznaniu.",
+
+  "What kind of information do I look up most often? Note: This is a multiple-choice question :)": "Jakich informacji najczęściej poszukuję? Uwaga! Pytanie wielokrotnego wyboru :)",
+
+  "What time does the last :service_type :icon of line no. :line_no depart from the ':stop_name' stop towards ':station_name' on :time_period?":
+    "O której godzinie w :time_period odjeżdża ostatni(a) :service_type :icon linii nr :line_no z przystanku ':stop_name' w stronę ':station_name'?",
+
+  "Which operating system do I use the most:": "Z jakiego systemu operacyjnego korzystam najwięcej:",
+
+  "Which page appears more readable?": "Która strona wydaje się być czytelniejsza?",
+
+  "Windows 10/11": "Windows 10/11",
+
+  "Windows 8/8.1": "Windows 8/8.1",
+
+  "Windows 7 or older": "Windows 7 lub starszy",
+
+  "workdays": "dni robocze",
+  
+  "Yes": "Tak"
+}

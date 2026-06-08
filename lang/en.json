@@ -1,0 +1,446 @@
+{
+  "Select Language": "Select Language",
+
+  "Correct and Controlled to Other": "Correct and Controlled to Other",
+  
+  "Other": "Other",
+
+  "Correct and Controlled": "Correct and Controlled",
+
+  "Incorrect": "Incorrect",
+
+  "Correct": "Correct",
+
+  "Correct to Incorrect": "Correct to Incorrect",
+  
+  "Incorrect surveys": "Incorrect surveys",
+
+  "Correct surveys": "Correct surveys",
+
+  "Incomplete": "Incomplete",
+
+  "Filled": "Filled",
+
+  "Filled to Incomplete": "Filled to Incomplete",
+  
+  "Incomplete surveys": "Incomplete surveys",
+
+  "Filled surveys": "Filled surveys",
+
+  "All surveys": "All surveys",
+
+  "Unfiltered data preview": "Unfiltered data preview",
+
+  "Download.verb": "Download",
+
+  "Download.noun": "Download",
+  
+  "Reject invalid control questions": "Reject invalid control questions",
+  
+  "Reject empty research questions": "Reject empty research questions",
+  
+  "Empty columns limit": "Empty columns limit",
+  
+  "Data filtering": "Data filtering",
+  
+  "Statistics": "Statistics",
+
+  "Downloading": "Downloading",
+
+  "Hello, :name in the admin backrooms.": "Hello, :name in the admin backrooms.",
+
+  "Minute": "Minute",
+
+  "Hour": "Hour",
+
+  "Jan": "Jan",
+
+  "Feb": "Feb",
+
+  "Mar": "Mar",
+
+  "Apr": "Apr",
+
+  "Jun": "Jun",
+
+  "Jul": "Jul",
+
+  "Aug": "Aug",
+
+  "Sep": "Sep",
+
+  "Oct": "Oct",
+
+  "Nov": "Nov",
+
+  "Dec": "Dec",
+
+  "January": "January",
+
+  "February": "February",
+
+  "Marc": "Marc",
+
+  "April": "April",
+
+  "May": "May",
+
+  "June": "June",
+
+  "July": "July",
+
+  "August": "August",
+
+  "September": "September",
+
+  "October": "October",
+
+  "November": "November",
+
+  "December": "December",
+
+  "Su": "Su",
+
+  "Sa": "Sa",
+
+  "Fr": "Fr",
+
+  "Th": "Th",
+
+  "We": "We",
+
+  "Tu": "Tu",
+
+  "Mo": "Mo",
+
+  "Sunday": "Sunday",
+
+  "Saturday": "Saturday",
+
+  "Friday": "Friday",
+
+  "Thursday": "Thursday",
+
+  "Wednesday": "Wednesday",
+
+  "Tuesday": "Tuesday",
+
+  "Monday": "Monday",
+
+  "Stops": "Stops",
+
+  "Sundays and Holidays": "Sundays and Holidays",
+  
+  "Saturdays": "Saturdays",
+
+  "Workdays": "Workdays",
+
+  "To:": "To:",
+
+  "The timetable for this line is inactive.": "The timetable for this line is inactive.",
+
+  "Pick a day": "Pick a day",
+
+  "Tourist.adjective": "Tourist",
+
+  "Night.adjective": "Night",
+
+  "Bus.adjective": "Bus",
+
+  "Tram.adjective.male": "Tram",
+
+  "Tram.adjective": "Tram",
+
+  "Please enter the credentials": "Please enter the credentials",
+
+  "Error occurred: please try restarting the browser.": "Error occurred: please try restarting the browser.",
+
+  "...": "...",
+
+  "<1": "<1",
+
+  "1-4": "1-4",
+
+  "5-8": "5-8",
+
+  "9+": "9+",
+
+  "About research": "About research",
+
+  "About.survey": "About survey",
+
+  "About survey": "About survey",
+
+  "About technologies": "About technologies",
+
+  "admin backend": "admin backend",
+
+  "and": "and",
+
+  "Android": "Android",
+
+  "Answer registered successfully.": "Answer registered successfully.",
+
+  "Are you left or right-handed?": "Are you left or right-handed?",
+
+  "Archival timetable data.": "Archival timetable data.",
+
+  "Artificial intelligence models (chatgpt.com)": "Artificial intelligence models (chatgpt.com)",
+
+  "Authorization failed.": "Authorization failed.",
+
+  "Back to Survey": "Back to Survey",
+
+  "Backrooms": "Backrooms",
+
+  "Banking": "Banking",
+
+  "Both.female": "Both",
+
+  "bus": "bus",
+
+  "Cannot register the answer, please try again.": "Cannot register the answer, please try again.",
+
+  "Certain information": "Certain information",
+
+  "Challenge": "Challenge",
+
+  "Close": "Close",
+
+  "Content sharing platform. Patterns used are named as follows: \"Leaves 2 Pattern\".":
+    "Content sharing platform. Patterns used are named as follows: \"Leaves 2 Pattern\".",
+
+  "Desmos Graphing Calculator": "Desmos Graphing Calculator",
+
+  "Do you suffer from a diagnosed color blindness?": "Do you suffer from a diagnosed color blindness?",
+
+  "Do you suffer from a visual impairment?": "Do you suffer from a visual impairment?",
+
+  "Do you use glasses or contact lenses?": "Do you use glasses or contact lenses?",
+  
+  "Entertainment (netflix.com)": "Entertainment (netflix.com)",
+
+  "Faculty of Environmental Engineering and Mechanical Engineering":
+    "Faculty of Environmental Engineering and Mechanical Engineering",
+
+  "Female": "Female",
+  
+  "Finally, a few preferential questions.": "Finally, a few preferential questions.",
+
+  "Finish": "Finish",
+
+  "First, I would like You to share some demographic and health-related information.":
+    "First, I would like You to share some demographic and health-related information.",
+
+  "Fluent UI 2": "Fluent UI 2",
+
+  "For work/school related purposes": "For work/school related purposes",
+
+  "Fontello": "Fontello",
+
+  "Good day, we would like to invite you to take part in the following survey, which is a foundation for conducting a scientific study for a master's thesis.":
+    "Good day, we would like to invite you to take part in the following survey, which is a foundation for conducting a scientific study for a master's thesis",
+
+  "holidays": "holidays",
+
+  "How do I rate the accuracy of the information I have found in the timetable?":
+    "How do I rate the accuracy of the information I have found in the timetable?",
+
+  "How many times does :service_type :icon no. :line_no transit due the ':station_name' station on :time_period?":
+    "How many times does :service_type :icon no. :line_no transit due the ':station_name' station on :time_period?",
+
+  "I access websites mainly via:": "I access websites mainly via:",
+
+  "I don't know": "I don't know",
+
+  "I think I spend so many hours on the internet:": "I think I spend so many hours on the internet:",
+
+  "Iconography datasets.": "Iconography datasets.",
+
+  "Information rather certain": "Information rather certain",
+
+  "Information rather uncertain": "Information rather uncertain",
+
+  "Information Technology and Data Engineering": "Information Technology and Data Engineering",
+
+  "iOS": "iOS",
+
+  "Education (khanacademy.org)": "Education (khanacademy.org)",
+
+  "Encyclopedic information (wikipedia.org)": "Encyclopedic information (wikipedia.org)",
+
+  "Last question!": "Last question!",
+
+  "Laravel": "Laravel",
+
+  "Left-handed": "Left-handed",
+
+  "Line: :number": "Line: :number",
+
+  "Livewire": "Livewire",
+
+  "loading, please wait...": "loading, please wait...",
+
+  "Log in": "Log in",
+
+  "Log-in": "Log-in",
+
+  "Login": "Login",
+
+  "Kacper Malicki": "Kacper Malicki",
+
+  "macOS": "macOS",
+
+  "Mail (gmail.com)": "Mail (gmail.com",
+
+  "Male": "Male",
+
+  "Metro UI 5": "Metro UI 5",
+
+  "Modern (2017) user interface design system.": "Modern (2017) user interface design system.",
+
+  "My age:": "My age:",
+
+  "night.service": "night service",
+
+  "No": "No",
+
+  "No data.": "No data.",
+
+  "Node Package Manager": "Node Package Manager",
+
+  "Now, please complete the following challenges.": "Now, please complete the following challenges.",
+
+  "On which website was it faster to find the information?": "On which website was it faster to find the information?",
+
+  "Other.female": "Other",
+
+  "Other.male": "Other",
+
+  "Technology tool.": "Technology tool.",
+
+  "Thank You.I": "Thank You",
+
+  "Thank You.we": "Thank You",
+
+  "Thank you for participating.": "Thank you for participating.",
+
+  "The password is incorrect": "The password is incorrect",
+
+  "This website collects your browser name and operating system name for statistical and comparative purposes. Registration occurs after clicking the survey button.":
+    "This website collects your browser name and operating system name for statistical and comparative purposes. Registration occurs after clicking the survey button.",
+
+  "Password": "Password",
+
+  "Participation is voluntary, however it is important that each respondent partakes no more than once, filling all the survey fields.":
+    "Participation is voluntary, however it is important that each respondent partakes no more than once, filling all the survey fields.",
+
+  "Personal computer / Laptop": "Personal computer / Laptop",
+
+  "Phone / Handheld device": "Phone / Handheld device",
+
+  "Please find information on a timetable by clicking here: :link and returning to the survey...":
+    "Please find information on a timetable by clicking here: :link and returning to the survey...",
+
+  "Please find information concerning a timetable by clicking the link: :link and then returning to the survey...":
+    "Please find information concerning a timetable by clicking the link: :link and then returning to the survey...",
+
+  "Poznań University of Life Sciences": "Poznań University of Life Sciences",
+
+  "Poznań Public Transport Authority": "Poznań Public Transport Authority",
+
+  "Return": "Return",
+
+  "React.js": "React.js",
+
+  "Reactive websites framework, built with Laravel.": "Reactive websites framework, built with Laravel.",
+
+  "Remember me": "Remember me",
+
+  "Right-handed": "Right-handed",
+
+  "saturdays": "saturdays",
+
+  "Scientific information (scholar.google.com)": "Scientific information (scholar.google.com)",
+
+  "Sex:": "Sex:",
+
+  "Similarly": "Similarly",
+
+  "Social media (example: facebook.com)": "Social media (example: facebook.com)",
+
+  "A new survey hasn't been created. Please try refreshing the page.":
+    "A new survey hasn't been created. Please try refreshing the page.",
+
+  "Start": "Start",
+
+  "Stop: :from - :to": "Stop: :from - :to",
+
+  "sundays": "sundays",
+
+  "sundays and holidays": "sundays and holidays",
+
+  "Survey": "Survey",
+  
+  "Tablet": "Tablet",
+
+  "The data will not be shared, commercialized or processed in any other way than for the purpose stated above.":
+    "The data will not be shared, commercialized or processed in any other way than for the purpose stated above.",
+
+  "The survey concerns the problem of information searching on the Internet.":
+    "The survey concerns the problem of information searching on the Internet.",
+
+  "The survey is intended to collect data for the purposes of a master's thesis in the field of Information Technology and Data Engineering.":
+    "The survey is intended to collect data for the purposes of a master's thesis in the field of Information Technology and Data Engineering.",
+
+  "Timetable": "Timetable",
+
+  "Toptal Subtle Patterns": "Toptal Subtle Patterns",
+
+  "tourist.line": "tourist line",
+
+  "tram": "tram",
+
+  "Unable to close the survey. This is optional anyways. Thank You for your time.":
+    "Unable to close the survey. This is optional anyways. Thank You for your time.",
+
+  "Uncertain information": "Uncertain information",
+
+  "Used to calculate animation timings.": "Used to calculate animation timings.",
+
+  "Username": "Username",
+
+  "Validation failed for: :validable": "Validation failed for: :validable",
+
+  "Prior user interface design language.": "Prior user interface design language.",
+
+  "Web development framework.": "Web development framework.",
+
+  "Web user interface framework.": "Web user interface framework.",
+
+  "Website 1.": "Website 1.",
+
+  "Website 2.": "Website 2.",
+
+  "Website created for research purposes at the Poznań University of Life Sciences.":
+    "Website created for research purposes at the Poznań University of Life Sciences.",
+
+  "What kind of information do I look up most often? Note: This is a multiple-choice question :)": "What kind of information do I look up most often? Note: This is a multiple-choice question :)",
+
+  "What time does the last :service_type :icon of line no. :line_no depart from the ':stop_name' stop towards ':station_name' on :time_period?":
+    "What time does the last :service_type :icon of line no. :line_no depart from the ':stop_name' stop towards ':station_name' on :time_period?",
+
+  "Which operating system do I use the most:": "Which operating system do I use the most:",
+
+  "Which page appears more readable?": "Which page appears more readable?",
+
+  "Windows 10/11": "Windows 10/11",
+
+  "Windows 8/8.1": "Windows 8/8.1",
+
+  "Windows 7 or older": "Windows 7 or older",
+
+  "workdays": "workdays",
+  
+  "Yes": "Yes"
+}

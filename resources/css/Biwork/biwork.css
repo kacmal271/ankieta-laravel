@@ -1,0 +1,4992 @@
+/**
+ ******************************************************************************
+ */
+
+/**
+ * CONFIGURATION
+ * 
+ * Define your selectors in proper order
+ */
+
+:root
+{
+  /********************/
+  /* CONST: ANIMATION */
+  /********************/
+
+  --animation-time:           0.25000s;
+  --animation-time-fast:      0.12500s;
+  --animation-time-faster:    0.06250s;
+
+  /* use case: miniscule ui elements */
+  --animation-time-fastest:   0.03125s;
+
+  --animation-time-slow:      0.50000s;
+  --animation-time-slower:    0.75000s;
+  --animation-time-slowest:   1.00000s;
+
+  /* quadratic: https://www.desmos.com/calculator */
+  --animation-ease-in:                      var(--animation-time)           cubic-bezier(0.33,0.11 , 0.66,0.44);
+  --animation-ease-in-fast:                 var(--animation-time-fast)      cubic-bezier(0.33,0.11 , 0.66,0.44);
+  --animation-ease-in-fastest:              var(--animation-time-fastest)   cubic-bezier(0.33,0.11 , 0.66,0.44);
+  --animation-ease-in-slowest:              var(--animation-time-slowest)   cubic-bezier(0.33,0.11 , 0.66,0.44);
+
+  --animation-linear:                       var(--animation-time)           cubic-bezier(0.33,0.33 , 0.66,0.66);
+  --animation-linear-fast:                  var(--animation-time-fast)      cubic-bezier(0.33,0.33 , 0.66,0.66);
+  --animation-linear-faster:                var(--animation-time-faster)    cubic-bezier(0.33,0.33 , 0.66,0.66);
+  --animation-linear-fastest:               var(--animation-time-fastest)   cubic-bezier(0.33,0.33 , 0.66,0.66);
+  --animation-linear-slow:                  var(--animation-time-slow)      cubic-bezier(0.33,0.33 , 0.66,0.66);
+  --animation-linear-slower:                var(--animation-time-slower)    cubic-bezier(0.33,0.33 , 0.66,0.66);
+  --animation-linear-slowest:               var(--animation-time-slowest)   cubic-bezier(0.33,0.33 , 0.66,0.66);
+
+	/* ^^^ Juxtaposition */
+
+	/******************************/
+	/* CONST: COLOR PALETTE       */
+	/******************************/
+
+	/**
+	 *	Usage:
+	 *	var(--auburn-darker);
+	 */
+  
+  --transparent: rgba(0, 0, 0, 0);
+	
+	/* KEY */
+	--black:					#000000;
+	--black-binary:		rgba(0, 0, 0, 0.5);
+	--black-quart:		rgba(0, 0, 0, 0.25);
+	--black-octal:		rgba(0, 0, 0, 0.125);
+	--black-hex:		  rgba(0, 0, 0, 0.0625);
+	--white:					#ffffff;
+  --white-binary:   rgba(255, 255, 255, 0.5);
+  --white-quart:    rgba(255, 255, 255, 0.25);
+  --white-octal:    rgba(255, 255, 255, 0.125);
+  --white-hex:      rgba(255, 255, 255, 0.0625);
+	--red:						#ff0000;
+	--green:					#00ff00;
+	--blue:						#0000ff;
+	
+	/* GENERICS */
+	--auburn-dark:		    #8C181A;
+	--beige-dark:		      #CD853F;
+	--beige-light:		    #FFEFD5;
+	--beige-light-binary:	rgba(255, 239, 213, 0.5);
+	--beige-wood:		      #664735;
+	--blue-darker:		    #000035;
+	--carrot:					    #FF6800;
+	--dark-blue:					#0039B7;
+	--dark-blue-light:	  #0047e0;
+	--dark-blue-lighter:	#0a58ff;
+	--dark-blue-lightest:	#3374ff;
+	--gray:		            rgba(127, 127, 127, 1);
+	--gray-binary:		    rgba(127, 127, 127, 0.5);
+	--gray-dark:		      rgba(64, 64, 64, 1);
+	--gray-dark-binary:   rgba(64, 64, 64, 0.5);
+	--gray-darker:        rgba(32, 32, 32, 1);
+	--gray-darker-binary: rgba(32, 32, 32, 0.5);
+	--gray-darker-quart:  rgba(32, 32, 32, 0.25);
+	--gray-darkest-binary:rgba(16, 16, 16, 0.50);
+	--gray-light:		      rgba(207, 207, 207, 1);
+	--gray-lighter:		    rgba(223, 223, 223, 1);
+	--gray-lightest:		  rgba(239, 239, 239, 1);
+	--gray-quart:		      rgba(191, 191, 191, 0.25);
+	--gray-octal:		      rgba(191, 191, 191, 0.125);
+	--green-binary:		    rgba(0, 255, 0, 0.5);
+	--green-quart:		    rgba(0, 255, 0, 0.25);
+	--green-octal:		    rgba(0, 255, 0, 0.125);
+	--green-hex:		      rgba(0, 255, 0, 0.0625);
+	--hot-pink:				    #FF69B4;
+	--hot-pink-light:	    #FAB3DB;
+	--puke-green:			    #78b98a;
+	--puke-green-binary:	rgba(120, 186, 140, 0.5);
+	--puke-green-quart:	  rgba(120, 186, 140, 0.25);
+	--puke-green-dark:	  #4e9764;
+	--puke-green-darker:	#346543;
+	--puke-green-darkest:	#1a3221;
+	--pumpkin-orange:			#D54500;
+	--red-binary:			    rgba(255, 0, 0, 0.5);
+	--red-quart:			    rgba(255, 0, 0, 0.25);
+	--rot-green:			    #445a4d;
+  --wheat:              wheat;
+	
+	/* PASTELS */
+	--pastel-lime:				rgba(192, 255, 192, 1);
+	--pastel-mint:				rgba(192, 255, 255, 1);
+	--pastel-pink:				rgba(255, 192, 255, 1);
+	--pastel-red:					rgba(255, 192, 192, 1);
+	--pastel-violet:			rgba(192, 192, 255, 1);
+	--pastel-yellow:			rgba(255, 255, 192, 1);
+	
+	/* CANDIES */	
+	--candy-sunflower:				#FFDD00;
+	--candy-magenta:					#FF007F;
+	--candy-violet:						#7F00FF;
+	--candy-orange:						#FFC000;
+	--candy-blue:							#4198D6;
+	--candy-blue-dark:				#287fbd;
+	
+	/* BUBBLEGUMS */
+	--bubblegum-blue:			      #89F9FD;
+	--bubblegum-blue-light:			#b5fcfd;
+	--bubblegum-blue-dark:      #447C7D;
+	--bubblegum-pink:			      #FF74B3;
+	--bubblegum-yellow:		      #FFFFB5;
+	
+	/* SHADES OF VIOLET PURPLE		*/
+	/* Biwork's speciality C:			*/
+	--violet:				      #8000FF;
+  --violet-light:			  #bf80ff;
+  --violet-dark:			  #400080;
+	/* Juxtaposition */
+	--purple-dark:		    #56346B;
+	--magenta-dark:		    #FF0080;
+
+  /******************/
+	/* CONST: Z-INDEX */
+  /******************/
+
+  --high:           1;
+  --higher:         100;
+  --highest:        1000;
+  --low:            -1;
+  --lower:          -100;
+  --lowest:         -1000;
+  --mid:            0;
+	
+	/**************************/
+	/* MODIFY: BACKGROUND IMG */
+  /**************************/
+
+	--background-image-body:                    url("");
+	--background-image:                         url("@graphics/background_leafs_lime.jpg");
+  --background-image-popup:                   url("");
+  --background-button-attachment:             url("");
+  --background-button-search:                 url("");
+  --background-button-trash:                  url("");
+
+  /******************/
+  /* MODIFY: BORDERS */
+  /******************/
+
+  --border-thin:    0.0625rem;
+  --border-normal:  0.125rem;
+  --border-thick:   0.25rem;
+
+  /**********************/
+  /* MODIFY: BOX-SHADOW */
+  /**********************/
+
+  --box-shadow-color:  rgba(127, 127, 127, 255);
+
+  /******************/
+  /* MODIFY: BUTTON */
+  /******************/
+
+  --button-button-background-color:             #247151;
+  --button-button-background-color-hover:       #2b8861;
+  --button-button-color:                        #FFFFFF;
+  --button-button-border:                         0rem solid rgba(0, 0, 0, 255);
+
+  /*****************/
+	/* MODIFY: FONTS */
+	/*****************/
+
+	/* Chrome=ok, Firefox=ok, OperaGX=ERR */
+
+	--font-xxxl:            200%;
+	--font-xxl:             175%;
+	--font-xl:              150%;
+	--font-l:               125%;
+	--font-m:               100%;
+	--font-s:               87.5%;
+	--font-xs:              75%;
+
+  /* icons, text not recommended */
+	--font-xxs:             62.5%;
+
+	--font-size:            16px; /* 1vh = too small */
+	--font-family:          "Segoe UI", sans-serif, "Bookman Oldman", "Franklin Gothic Medium", "Tahoma";
+	--font-family-header:   "Segoe UI", sans-serif, "Impact", "Bookman Oldman", "Franklin Gothic Medium", "Tahoma";
+  --font-thick:           700;
+  --font-normal:          400;
+  --font-thin:            100;
+
+	/**********/
+	/* MODIFY */
+	/**********/
+
+  /**
+   * background = background-color
+   */
+
+  --background-body:  			    #f0f0f0;
+  --background-body-alt:  	    #eaeaea;
+
+  --background:  			              #ffffff;
+  --background-binary:  			      rgba(255, 255, 255, 0.5);
+  --background-light:  			        #ffffff;
+  --background-lighter:  			      #ffffff;
+  --background-lightest:  			    #ffffff;
+  --background-dark:  			        var(--gray-lightest);
+  --background-darker:  			      #ffffff;
+  --background-darkest:  			      #ffffff;
+  --background-alt:  	              #c1deab;
+  --background-alt-light:  	        #f0f0f0;
+  --background-alt-lighter:  	      #f0f0f0;
+  --background-alt-lightest:  	    #f0f0f0;
+  --background-alt-dark:  	        #247151;
+  --background-alt-dark-binary:  	  rgba(36, 113, 81, 0.5);
+  --background-alt-dark-quart:  	  rgba(36, 113, 81, 0.25);
+  --background-alt-darker:  	      #f0f0f0;
+  --background-alt-darkest:  	      #f0f0f0;
+
+  --border:                             #247151;
+  --border-light:                       #ffffff;
+  --border-lighter:                     #ffffff;
+  --border-lightest:                    #ffffff;
+  --border-dark:                        #ffffff;
+  --border-darker:                      #ffffff;
+  --border-darkest:                     #ffffff;
+  --border-alt:                         #84be57;
+  --border-alt-light:                   #ffffff;
+  --border-alt-lighter:                 #ffffff;
+  --border-alt-lightest:                #ffffff;
+  --border-alt-dark:                    #ffffff;
+  --border-alt-darker:                  #ffffff;
+  --border-alt-darkest:                 #ffffff;
+
+  --background-nav:                #f0f0f0;
+  --background-main:               #f0f0f0;
+  --background-footer:             #f0f0f0;
+  --background-header:             #f0f0f0;
+  --background-section:            #F0F0F0;
+
+  --background-pagination-button:         #5591ff;
+  --background-pagination-button-active:  #0059ff;
+  --background-pagination-button-hover:   #669cff;
+  --color-pagination-button:              var(--white);
+	
+  --background-error:         #C63E3E;
+  --color-error:              #C63E3E;
+  --background-ok:            #00aa00;
+  --color-ok:                 #00aa00;
+  --background-warning:       #FCE100;
+  --color-warning:            #FCE100;
+
+  /**
+   * border = border-color
+   * border-size = border-size
+   */
+
+  --border-table:                      rgba(0, 0, 0, 255);
+	
+  --background-popup:     #ffffff;
+  --background-popup-alt: #F0F0F0;
+
+  --background-checkbox:  	    #ffffff;
+  --border-checkbox:  	        #c1c1ff;
+  --border-checkbox-checkmark:  #0047cc;
+  --color-checkbox:  	          var(--black);
+
+  --background-active:               		    #5591ff;
+  --background-active-hover:               	#669cff;
+  --color-active:               		        var(--white);
+
+  --background-inactive:               		    var(--gray-lighter);
+  --background-inactive-hover:               	var(--gray-lightest);
+  --color-inactive:               		        var(--black);
+  
+  --color-date:               		          #000000;
+  --color-time:               		          #000000;
+  --color-time-alt:                         #000000;
+
+  /**
+   * outline = outline-color
+   */
+
+  --outline-focus:               		  #84BE57;
+  --border-focus:               		  #84BE57;
+
+  --background-info:             			var(--dark-blue-light);
+  --color-info:             			    var(--white);
+
+	--color-interactable:               var(--white);
+	--background-interactable:          #247151;
+	--background-interactable-hover:    #2b8861;
+
+  --color-link:             			    inherit;
+  --color-link-hover:       			    inherit;
+
+  --background-notification:                 rgba(255, 239, 213, 0.5);
+  --border-notification:                     var(--beige-dark);
+  --color-notification:                      var(--black);
+
+  --background-radio:             var(--white);
+  --border-radio:                 #9164FA;
+  --color-radio:                  var(--black);
+  --color-radio-checked:          var(--black);
+  --color-radio-checked-shadow:   #9164FA;
+
+  --color-placeholder:                var(--beige-light-binary);
+
+  --color-route:                  var(--white);
+	--color:										    var(--black);
+	--color-alt:								    var(--beige-light);
+	--color-title:									var(--black);
+  --color-submit:      			      #ffffff;
+  --color-username:           		var(--color-alt);
+
+	/**********************/
+	/* MODIFY: DARK THEME */
+	/**********************/
+
+
+}
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * Biwork is a CSS JS framework for styling frontend
+ */
+
+/**
+ * Box sizing border box
+ */
+
+*
+{
+  font-family: var(--font-family);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/**
+ * Keep on top = Overwrittable
+ */
+
+.bi-reset-style
+{
+  color: inherit;
+  text-decoration: none;
+  padding: 0;
+  width: auto;
+  background: none;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  font-size: var(--font-size);
+}
+
+    .bi-reset-style-important
+    {
+      color: inherit !important;
+      text-decoration: none !important;
+      padding: 0 !important;
+      width: auto !important;
+      background: none !important;
+      border: none !important;
+      border-radius: 0 !important;
+      margin: 0 !important;
+      font-size: var(--font-size) !important;
+    }
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * BIWORK
+ */
+
+.bi-single
+{
+  /* dont mix style with layout */
+  /* padding: 1rem; */
+  flex: 0 0 100%;
+}
+
+.bi-binary
+{
+  /* dont mix style with layout */
+  /* padding: 1rem; */
+  flex: 0 0 50%;
+}
+
+.bi-binary-fill
+{
+  /* dont mix style with layout */
+  /* padding: 1rem; */
+  flex: 1 0 50%;
+}
+
+.bi-quart
+{
+  /* dont mix style with layout */
+  /* padding: 1rem; */
+  flex: 0 0 25%;
+}
+
+.bi-quart-fill
+{
+  /* dont mix style with layout */
+  /* padding: 1rem; */
+  flex: 1 0 25%;
+}
+
+.bi-octal
+{
+  /* dont mix style with layout */
+  /* padding: 1rem; */
+  flex: 0 0 12.5%;
+}
+
+.bi-octal-fill
+{
+  /* dont mix style with layout */
+  /* padding: 1rem; */
+  flex: 1 0 12.5%;
+}
+
+.bi-hex
+{
+  /* dont mix style with layout */
+  /* padding: 1rem; */
+  flex: 0 0 6.25%;
+}
+
+.bi-hex-fill
+{
+  /* dont mix style with layout */
+  /* padding: 1rem; */
+  flex: 1 0 6.25%;
+}
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * COLOR CLASSES
+ */
+
+.bi-background
+{
+	background-color: var(--background) !important;
+}
+
+    .bi-background-binary
+    {
+      background-color: var(--background-binary) !important;
+    }
+
+    .bi-background-dark
+    {
+      background-color: var(--background-dark) !important;
+    }
+
+    .bi-background-hover:hover
+    {
+      background-color: var(--background) !important;
+    }
+
+.bi-background-alt
+{
+	background-color: var(--background-alt) !important;
+}
+
+    .bi-background-alt-dark
+    {
+      background-color: var(--background-alt-dark) !important;
+    }
+
+    .bi-background-alt-dark-binary
+    {
+      background-color: var(--background-alt-dark-binary) !important;
+    }
+
+    .bi-background-alt-dark-quart
+    {
+      background-color: var(--background-alt-dark-quart) !important;
+    }
+
+.bi-background-image
+{
+	background-image: var(--background-image) !important;
+}
+
+.bi-background-auburn-dark
+{
+	background-color: var(--auburn-dark) !important;
+}
+
+.bi-background-black
+{
+	background-color: var(--black) !important;
+}
+
+    .bi-background-black-binary
+    {
+      background-color: var(--black-binary) !important;
+    }
+
+.bi-background-blue
+{
+	background-color: var(--blue) !important;
+}
+
+.bi-background-error
+{
+	background-color: var(--background-error) !important;
+}
+
+.bi-background-info
+{
+  background-color: var(--background-info) !important;
+}
+
+.bi-background-interactable
+{
+  background-color: var(--background-interactable) !important;
+}
+
+.bi-background-interactable-hover
+{
+	background-color: var(--background-interactable-hover) !important;
+}
+
+.bi-background-green
+{
+	background-color: var(--green) !important;
+}
+
+    .bi-background-green-binary
+    {
+      background-color: var(--green-binary) !important;
+    }
+
+    .bi-background-green-quart
+    {
+      background-color: var(--green-quart) !important;
+    }
+
+    .bi-background-green-octal
+    {
+      background-color: var(--green-octal) !important;
+    }
+
+    .bi-background-green-hex
+    {
+      background-color: var(--green-hex) !important;
+    }
+
+.bi-background-gray
+{
+	background-color: var(--gray) !important;
+}
+
+    .bi-background-gray-dark
+    {
+      background-color: var(--gray-dark) !important;
+    }
+
+    .bi-background-gray-light
+    {
+      background-color: var(--gray-light) !important;
+    }
+
+    .bi-background-gray-lighter
+    {
+      background-color: var(--gray-lighter) !important;
+    }
+
+    .bi-background-gray-lightest
+    {
+      background-color: var(--gray-lightest) !important;
+    }
+
+    .bi-background-gray-quart
+    {
+      background-color: var(--gray-quart) !important;
+    }
+
+    .bi-background-gray-octal
+    {
+      background-color: var(--gray-octal) !important;
+    }
+
+.bi-background-ok
+{
+	background-color: var(--background-ok) !important;
+}
+
+.bi-background-pagination-button
+{
+  background-color: var(--background-pagination-button) !important;
+}
+
+    .bi-background-pagination-button:hover
+    {
+      background-color: var(--background-pagination-button-hover) !important;
+    }
+
+.bi-background-pagination-button-active
+{
+  background-color: var(--background-pagination-button-active) !important;
+}
+
+.bi-background-popup
+{
+  background-color: var(--background-color-popup) !important;
+}
+
+.bi-background-popup-alt
+{
+  background-color: var(--background-color-popup-alt) !important;
+}
+
+.bi-background-puke-green
+{
+  background-color: var(--puke-green) !important;
+}
+
+.bi-background-puke-green-binary
+{
+  background-color: var(--puke-green-binary) !important;
+}
+
+.bi-background-puke-green-quart
+{
+  background-color: var(--puke-green-quart) !important;
+}
+
+.bi-background-puke-green-quart-hover:hover
+{
+  background-color: var(--puke-green-quart) !important;
+}
+
+.bi-background-puke-green-darker
+{
+  background-color: var(--puke-green-darker) !important;
+}
+
+.bi-background-puke-green-darkest
+{
+  background-color: var(--puke-green-darkest) !important;
+}
+
+.bi-background-red
+{
+	background-color: var(--red) !important;
+}
+
+.bi-background-red-binary
+{
+	background-color: var(--red-binary) !important;
+}
+
+.bi-background-red-quart
+{
+	background-color: var(--red-quart) !important;
+}
+
+.bi-background-transparent
+{
+	background-color: var(--transparent) !important;
+}
+
+.bi-background-warning
+{
+  background-color: var(--background-warning) !important;
+}
+
+.bi-background-white
+{
+  background-color: var(--white) !important;
+}
+
+    .bi-background-white-binary
+    {
+      background-color: var(--white-binary) !important;
+    }
+
+    .bi-background-white-quart
+    {
+      background-color: var(--white-quart) !important;
+    }
+
+    .bi-background-white-octal
+    {
+      background-color: var(--white-octal) !important;
+    }
+
+    .bi-background-white-hex
+    {
+      background-color: var(--white-hex) !important;
+    }
+
+.bi-border
+{
+	border-color: var(--border) !important;
+}
+    
+    .bi-border-error
+    {
+      border-color: var(--background-error) !important;
+    }
+    
+    .bi-border-gray
+    {
+      border-color: var(--gray) !important;
+    }
+    
+    .bi-border-green
+    {
+      border-color: var(--green) !important;
+    }
+    
+    .bi-border-transparent
+    {
+      border-color: var(--transparent) !important;
+    }
+
+    .bi-border-warning
+    {
+      border-color: var(--background-warning) !important;
+    }
+
+    .bi-border-white
+    {
+      border-color: var(--white) !important;
+    }
+
+.bi-color
+{
+	color: var(--color) !important;
+}
+
+.bi-color-black
+{
+	color: var(--black) !important;
+}
+
+.bi-color-blue
+{
+	color: var(--blue) !important;
+}
+
+.bi-color-carrot
+{
+	color: var(--carrot) !important;
+}
+
+.bi-color-error
+{
+	color: var(--color-error) !important;
+}
+
+.bi-color-date
+{
+	color: var(--color-date) !important;
+}
+
+.bi-color-gray
+{
+	color: var(--gray) !important;
+}
+
+.bi-color-green
+{
+	color: var(--green) !important;
+}
+
+.bi-color-green-binary
+{
+	color: var(--green-binary) !important;
+}
+
+.bi-color-green-quart
+{
+	color: var(--green-quart) !important;
+}
+
+.bi-color-hotpink
+{
+  color: var(--hot-pink) !important;
+}
+
+.bi-color-info
+{
+  color: var(--color-info) !important;
+}
+
+.bi-color-interactable
+{
+  color: var(--color-interacable) !important;
+}
+
+.bi-color-ok
+{
+	color: var(--color-ok) !important;
+}
+
+.bi-color-pagination-button
+{
+  color: var(--color-pagination-button) !important;
+}
+
+.bi-color-red
+{
+	color: var(--red) !important;
+}
+
+.bi-color-alt
+{
+	color: var(--color-alt) !important;
+}
+
+.bi-color-time
+{
+	color: var(--color-time) !important;
+}
+
+.bi-color-time-alt
+{
+	color: var(--color-time-alt) !important;
+}
+
+.bi-color-username
+{
+	color: var(--color-username) !important;
+}
+
+.bi-color-warning
+{
+	color: var(--color-warning) !important;
+}
+
+.bi-color-white
+{
+	color: var(--white) !important;
+}
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * BUTTON SNIPPETS
+ */
+
+/* ******************* */
+/* BUTTON - ATTACHMENT */
+/* ******************* */
+
+.bi-button-attachment
+{
+  background-image: var(--background-button-attachment);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 0 !important;
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  
+}
+
+/* *************** */
+/* BUTTON - SEARCH */
+/* *************** */
+
+.bi-button-search-parent
+{
+  align-items: center;
+  background-color: var(--background-interactable);
+  border: 0.1rem solid var(--background-alt);
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.25rem 1rem;
+
+}
+
+.bi-button-search-parent:focus-within
+{
+  outline: 0.25rem solid var(--outline-focus);
+}
+
+.bi-button-search-parent
+.bi-button-search-button
+{
+  background-image: var(--background-button-search);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 0 !important;
+  float: left;
+  height: 1.25rem;
+  outline: 0;
+  cursor: pointer;
+  width: 1.25rem;
+
+}
+
+.bi-button-search-parent
+.bi-button-search-input
+{
+  border: 0;
+  flex-grow: 1;
+  float: left;
+  height: 2rem;
+  outline: 0;
+
+}
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * CHECKBOX SNIPPET
+ */
+
+/**
+ * label.checkbox
+ *   div.checkbox-positioner 
+ *     input[type=checkbox]
+ *     div.checkbox-container
+ *   span.checkbox-text
+ */
+
+label.bi-checkbox
+{
+  box-sizing: border-box;
+  position: relative;
+  padding-left: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+}
+
+/* DISABLE GLOBAL CHECKBOXES */
+input[type=checkbox]
+{
+  opacity: 0;
+  position: absolute;
+  z-index: var(--lowest);
+
+}
+
+/* vvv Checkmark vvv */
+
+label.bi-checkbox
+div.bi-checkbox-positioner
+{
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  /* FIX OUTER SIZE */
+  height: 1rem;
+  width: 1rem;
+
+}
+
+label.bi-checkbox
+div.bi-checkbox-positioner
+div.bi-checkbox-container
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+/* Checkmark BACKGROUND */
+label.bi-checkbox
+div.bi-checkbox-positioner
+div.bi-checkbox-container::before
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  /* DISPLAYS BACKGROUND */
+  content: '';
+  
+  height: 1rem;
+  width: 1rem;
+  border: 0.1rem solid var(--border-checkbox);
+  border-radius: 0.25rem;
+  background-color: var(--background-checkbox);
+
+}
+
+    label.bi-checkbox:hover
+    div.bi-checkbox-positioner
+    /* checkbox hovered unchecked -> control the tick */
+    :not(input:checked) + div.bi-checkbox-container::after
+    {
+      opacity: 0.5;
+      display: inline !important;
+    }
+
+/* Checkmark TICK */
+label.bi-checkbox
+div.bi-checkbox-positioner
+div.bi-checkbox-container::after
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+
+  /* DISPLAYS TICK */
+  content: '';
+
+  height: 0.25rem;
+  width: 0.5rem;
+
+  border-left: 0.2rem solid;
+  border-bottom: 0.2rem solid;
+  border-color: var(--border-checkbox-checkmark);
+}
+
+    /* Uncheck */
+    label.bi-checkbox
+    div.bi-checkbox-positioner
+    :not(input:checked) + div.bi-checkbox-container::after
+    {
+      /* HIDE TICK */
+      display: none;
+    }
+
+    /* Focus */
+    label.bi-checkbox
+    div.bi-checkbox-positioner
+    /* checkbox focused unchecked -> control the tick */
+    input:focus:not(input:checked) + div.bi-checkbox-container::after
+    {
+      /**
+       * not very readable when unhovering
+       */
+
+      /* opacity: 0.5;
+      display: inline !important; */
+    }
+
+/* ^^^ Checkmark ^^^ */
+
+label.bi-checkbox
+span.bi-checkbox-text
+{
+  padding-left: 0.5rem;
+
+  text-align: left;
+  font-size: var(--font-s);
+  user-select: none;
+  color: var(--color-checkbox);
+}
+
+    label.bi-checkbox
+    div:has(input:checked)
+    + span.bi-checkbox-text
+    {
+      text-shadow:
+        0.05rem 0.05rem var(--border-checkbox),
+        0.05rem -0.05rem var(--border-checkbox),
+        -0.05rem 0.05rem var(--border-checkbox),
+        -0.05rem -0.05rem var(--border-checkbox);
+    }
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * INPUT SNIPPET
+ */
+
+/* ************ */
+/* INPUT - FILE */
+/* ************ */
+
+/* (!) This Snippet is JavaScript Scaffolding */
+/* (!) This Snippet is NOT standalone */
+/* write JavaScript yourself */
+
+.bi-input-file-parent /* wrapper */
+{
+  align-items: center;
+  background-color: var(--transparent);
+  border: 0.1rem solid var(--background-alt);
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  overflow: hidden;
+  outline: 0;
+  padding: 0.25rem 1rem;
+
+}
+
+.bi-input-file-parent
+.bi-input-file-input
+{
+  display: none;
+  outline: 0;
+
+}
+
+.bi-input-file-parent
+.bi-input-file-metadata
+{
+  flex-grow: 1;
+  outline: 0;
+  padding-right: 1rem;
+  text-wrap: nowrap;
+
+}
+
+.bi-input-file-parent
+.bi-input-file-button
+{
+  background-image: var(--background-button-trash);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 0 !important;
+  height: 1.25rem;
+  cursor: pointer;
+  width: 1.25rem;
+
+}
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * POPUP POP-UP
+ */
+
+/* This are crucial. Pay attention */
+.bi-popup-parent
+{
+	/* SET tabindex=0 ON YOUR <parent> */
+	pointer-events: none;
+
+  position: relative;
+}
+
+/* This are crucial. Pay attention */
+.bi-popup-parent .bi-popup-child
+{
+	pointer-events: auto;
+	
+	overflow: visible;
+	cursor: pointer;
+}
+
+/* This are crucial. Pay attention */
+.bi-popup-parent .bi-popup-thumbnail
+{
+	pointer-events: auto;
+	
+	overflow: visible;
+	cursor: pointer;
+}
+
+/**
+ *	SCALING POP-UP
+ */
+.bi-popup-parent:focus-within .bi-popup-child-auto
+{
+	width: auto;
+}
+
+/* pop-up content doesnt dictate width */
+.bi-popup-parent:focus-within .bi-popup-child-single
+{
+	width: 100vw;
+}
+
+/* pop-up content doesnt dictate width */
+.bi-popup-parent:focus-within .bi-popup-child-binary
+{
+	width: 50vw;
+}
+
+/* pop-up content doesnt dictate width */
+.bi-popup-parent:focus-within .bi-popup-child-quart
+{
+	width: 25vw;
+}
+
+/* pop-up content doesnt dictate width */
+.bi-popup-parent:focus-within .bi-popup-child-octal
+{
+	width: 12.5vw;
+}
+
+/* pop-up content doesnt dictate width */
+.bi-popup-parent:focus-within .bi-popup-child-hex
+{
+	width: 6.125vw;
+}
+
+/**
+ *	9 POP-UP TURNS
+ */
+
+.bi-popup-parent:focus-within .bi-popup-child-bottom-right
+{
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	z-index: var(--higher);
+}
+
+.bi-popup-parent:focus-within .bi-popup-child-bottom-center
+{
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	z-index: var(--higher);
+}
+
+.bi-popup-parent:focus-within .bi-popup-child-bottom-left
+{
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	transform: translate(0%, 0%);
+	z-index: var(--higher);
+}
+
+.bi-popup-parent:focus-within .bi-popup-child-center-right
+{
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	transform: translate(0%, -50%);
+	z-index: var(--higher);
+}
+
+.bi-popup-parent:focus-within .bi-popup-child-center-center
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: var(--higher);
+}
+
+.bi-popup-parent:focus-within .bi-popup-child-center-left
+{
+	position: absolute;
+	top: 50%;
+	right: 0%;
+	transform: translate(0%, -50%);
+	z-index: var(--higher);
+}
+
+.bi-popup-parent:focus-within .bi-popup-child-top-right
+{
+	position: absolute;
+	bottom: 0%;
+	left: 0%;
+	transform: translate(0%, 0%);
+	z-index: var(--higher);
+}
+
+.bi-popup-parent:focus-within .bi-popup-child-top-center
+{
+	position: absolute;
+	bottom: 0%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	z-index: var(--higher);
+}
+
+.bi-popup-parent:focus-within .bi-popup-child-top-left
+{
+	position: absolute;
+	bottom: 0%;
+	right: 0%;
+	transform: translate(0%, 0%);
+	z-index: var(--higher);
+}
+
+/**
+ *	IS CLICKED
+ */
+
+.bi-popup-parent:focus-within .bi-popup-child
+{
+	cursor: default;
+}
+
+/**
+ *	VISIBILITY
+ */
+
+.bi-popup-parent .bi-popup-child
+{
+	display: none;
+	position: absolute;
+	z-index: var(--low);
+}
+
+/* thumbnail */
+.bi-popup-parent > .bi-popup-thumbnail
+{
+	visibility: visible;
+}
+
+.bi-popup-parent:focus-within .bi-popup-child
+{
+	display: block;
+	z-index: var(--highest);
+
+}
+
+.bi-popup-parent:focus-within > .bi-popup-thumbnail
+{
+	visibility: hidden;
+}
+
+/**
+ *	BACKGROUND ON POP-UP
+ */
+
+.bi-popup-parent:focus-within .bi-popup-child .bi-popup-child-background
+{
+	z-index: var(--low);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	background-image: var(--background-image-popup);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	/* Used only if lacks image */
+	background-color: var(--background-popup);
+	filter: drop-shadow(1rem 1rem 0.5rem var(--black));
+}
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * RADIO SNIPPET
+ */
+
+/**
+ * label.radio
+ *   div.radio-positioner 
+ *     input[type=radio]
+ *     div.radio-container
+ *   span.radio-text
+ */
+
+label.bi-radio
+{
+  box-sizing: border-box;
+  position: relative;
+  padding-left: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+}
+
+/* DISABLE GLOBAL CHECKBOXES */
+input[type=radio]
+{
+  opacity: 0;
+  position: absolute;
+  z-index: var(--lowest);
+}
+
+/* vvv radio-dot vvv */
+
+label.bi-radio
+div.bi-radio-positioner
+{
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  /* FIX OUTER SIZE */
+  height: 1rem;
+  width: 1rem;
+
+}
+
+label.bi-radio
+div.bi-radio-positioner
+div.bi-radio-container
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+/* radio-dot BACKGROUND */
+label.bi-radio
+div.bi-radio-positioner
+div.bi-radio-container::before
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  /* DISPLAYS BACKGROUND */
+  content: '';
+  
+  height: 1rem;
+  width: 1rem;
+  border: 0.1rem solid var(--border-radio);
+  border-radius: 1000rem;
+  background-color: var(--background-radio);
+
+}
+
+    label.bi-radio:hover
+    div.bi-radio-positioner
+    /* radio hovered unchecked -> control the dot */
+    input:not(input:checked) + div.bi-radio-container::after
+    {
+      opacity: 0.5;
+      display: inline !important;
+    }
+
+/* radio-dot DOT */
+label.bi-radio
+div.bi-radio-positioner
+div.bi-radio-container::after
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+
+  /* DISPLAYS TICK */
+  content: '';
+
+  height: 0.5rem;
+  width: 0.5rem;
+
+  border-radius: 1000rem;
+  background-color: var(--border-radio);
+}
+
+    /* Uncheck */
+    label.bi-radio
+    div.bi-radio-positioner
+    :not(input:checked) + div.bi-radio-container::after
+    {
+      /* HIDE TICK */
+      display: none;
+    }
+
+    /* Focus */
+    label.bi-radio
+    div.bi-radio-positioner
+    /* radio focused unchecked -> control the dot */
+    input:focus:not(input:checked) + div.bi-radio-container::after
+    {
+      opacity: 0.5;
+      display: inline !important;
+    }
+
+/* ^^^ radio-mark ^^^ */
+
+label.bi-radio
+span.bi-radio-text
+{
+  padding-left: 0.5rem;
+
+  text-align: left;
+  font-size: var(--font-s);
+  user-select: none;
+  color: var(--color-radio);
+
+}
+
+    label.bi-radio
+    div:has(input:checked)
+    + span.bi-radio-text
+    {
+      color: var(--color-radio-checked);
+      text-shadow:
+         0.025rem   0.025rem var(--color-radio-checked-shadow),
+         0.025rem  -0.025rem var(--color-radio-checked-shadow),
+        -0.025rem   0.025rem var(--color-radio-checked-shadow),
+        -0.025rem  -0.025rem var(--color-radio-checked-shadow);
+    }
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * ANIMATIONS
+ */
+
+@keyframes animateFlash
+{
+  50% { filter: brightness(2); }
+}
+
+@-webkit-keyframes animateFlash
+{
+  50% { filter: brightness(2); }
+}
+
+    /* javascript operable */
+
+    .bi-animate-flash-linear
+    {
+      animation: animateFlash var(--animation-linear);
+      -webkit-animation: animateFlash var(--animation-linear);
+    }
+
+        /* html css operable */
+
+        .bi-animate-flash-linear-active:active
+        {
+          animation: animateFlash var(--animation-linear);
+          -webkit-animation: animateFlash var(--animation-linear);
+        }
+
+@keyframes animatePush75
+{
+  50% {transform: scale(0.75);}
+}
+
+@-webkit-keyframes animatePush75
+{
+  50% {transform: scale(0.75);}
+}
+
+    /* javascript operable */
+
+    .bi-animate-push-75-linear
+    {
+      animation: animatePush75 var(--animation-linear);
+      -webkit-animation: animatePush75 var(--animation-linear);
+    }
+
+        /* html css operable */
+
+        .bi-animate-push-75-linear-active:active
+        {
+          animation: animatePush75 var(--animation-linear);
+          -webkit-animation: animatePush75 var(--animation-linear);
+        }
+
+    /* javascript operable */
+
+    .bi-animate-push-75-linear-fast
+    {
+      animation: animatePush75 var(--animation-linear-fast);
+      -webkit-animation: animatePush75 var(--animation-linear-fast);
+    }
+
+        /* html css operable */
+
+        .bi-animate-push-75-linear-fast-active:active
+        {
+          animation: animatePush75 var(--animation-linear-fast);
+          -webkit-animation: animatePush75 var(--animation-linear-fast);
+        }
+
+    /* javascript operable */
+
+    .bi-animate-push-75-linear-faster
+    {
+      animation: animatePush75 var(--animation-linear-faster);
+      -webkit-animation: animatePush75 var(--animation-linear-faster);
+    }
+
+        /* html css operable */
+
+        .bi-animate-push-75-linear-faster-active:active
+        {
+          animation: animatePush75 var(--animation-linear-faster);
+          -webkit-animation: animatePush75 var(--animation-linear-faster);
+        }
+
+/**
+ * really big objects animation
+ */
+
+@keyframes animatePush95
+{
+  50% {transform: scale(0.95);}
+}
+
+@-webkit-keyframes animatePush95
+{
+  50% {transform: scale(0.95);}
+}
+
+    /* javascript operable */
+
+    .bi-animate-push-95-linear
+    {
+      animation: animatePush95 var(--animation-linear);
+      -webkit-animation: animatePush95 var(--animation-linear);
+    }
+
+        /* html css operable */
+
+        .bi-animate-push-95-linear-active:active
+        {
+          animation: animatePush95 var(--animation-linear);
+          -webkit-animation: animatePush95 var(--animation-linear);
+        }
+
+@keyframes animatePop125
+{
+  50% {transform: scale(1.25);}
+}
+
+@-webkit-keyframes animatePop125
+{
+  50% {transform: scale(1.25);}
+}
+
+    /* javascript operable */
+
+    .bi-animate-pop-125-linear
+    {
+      animation: animatePop125 var(--animation-linear);
+      -webkit-animation: animatePop125 var(--animation-linear);
+    }
+
+        /* html css operable */
+
+        .bi-animate-pop-125-linear-active:active
+        {
+          animation: animatePop125 var(--animation-linear);
+          -webkit-animation: animatePop125 var(--animation-linear);
+        }
+
+@keyframes animateSpringRight125
+{
+  /* (!) scale -> transform */
+  50% {transform: translate(25%, 0%) scale(1.25, 1);}
+}
+
+@-webkit-keyframes animateSpringRight125
+{
+  /* (!) scale -> transform */
+  50% {transform: translate(25%, 0%) scale(1.25, 1);}
+}
+
+    /**
+    * 120 = 1.2
+    * 120 > 100 : przegięcie, inflection
+    */
+
+    .bi-animate-spring-right-125-ease-in
+    {
+      animation: animateSpringRight125 var(--animation-ease-in);
+      -webkit-animation: animateSpringRight125 var(--animation-ease-in);
+    }
+
+        .bi-animate-spring-right-125-ease-in-active:active
+        {
+          animation: animateSpringRight125 var(--animation-ease-in);
+          -webkit-animation: animateSpringRight125 var(--animation-ease-in);
+        }
+
+    /* javascript operable */
+
+    .bi-animate-spring-right-125-ease-in-fast
+    {
+      animation: animateSpringRight125 var(--animation-ease-in-fast);
+      -webkit-animation: animateSpringRight125 var(--animation-ease-in-fast);
+    }
+
+        /* html css operable */
+
+        .bi-animate-spring-right-125-ease-in-fast-active:active
+        {
+          animation: animateSpringRight125 var(--animation-ease-in-fast);
+          -webkit-animation: animateSpringRight125 var(--animation-ease-in-fast);
+        }
+
+    .bi-animate-spring-right-125-ease-in-fastest
+    {
+      animation: animateSpringRight125 var(--animation-ease-in-fastest);
+      -webkit-animation: animateSpringRight125 var(--animation-ease-in-fastest);
+    }
+
+        .bi-animate-spring-right-125-ease-in-fastest-active:active
+        {
+          animation: animateSpringRight125 var(--animation-ease-in-fastest);
+          -webkit-animation: animateSpringRight125 var(--animation-ease-in-fastest);
+        }
+
+    .bi-animate-spring-right-125-ease-in-slowest
+    {
+      animation: animateSpringRight125 var(--animation-ease-in-slowest);
+      -webkit-animation: animateSpringRight125 var(--animation-ease-in-slowest);
+    }
+
+        .bi-animate-spring-right-125-ease-in-slowest-active:active
+        {
+          animation: animateSpringRight125 var(--animation-ease-in-slowest);
+          -webkit-animation: animateSpringRight125 var(--animation-ease-in-slowest);
+        }
+
+@keyframes animateSpringRight150
+{
+  /* waveform over time controlled by timing */
+  /* see classes using this @keyframe */
+  /* see variables --animation */
+  50% {transform: translate(50%, 0%) scale(1.50, 1);}
+}
+
+@-webkit-keyframes animateSpringRight150
+{
+  50% {transform: translate(50%, 0%) scale(1.50, 1);}
+}
+
+    /* javascript operable */
+
+    .bi-animate-spring-right-150-ease-in
+    {
+      animation: animateSpringRight150 var(--animation-ease-in);
+      -webkit-animation: animateSpringRight150 var(--animation-ease-in);
+    }
+
+        /* html css operable */
+
+        .bi-animate-spring-right-150-ease-in-active:active
+        {
+          animation: animateSpringRight150 var(--animation-ease-in);
+          -webkit-animation: animateSpringRight150 var(--animation-ease-in);
+        }
+
+    .bi-animate-spring-right-150-ease-in-fast
+    {
+      animation: animateSpringRight150 var(--animation-ease-in-fast);
+      -webkit-animation: animateSpringRight150 var(--animation-ease-in-fast);
+    }
+
+        .bi-animate-spring-right-150-ease-in-fast:active
+        {
+          animation: animateSpringRight150 var(--animation-ease-in-fast);
+          -webkit-animation: animateSpringRight150 var(--animation-ease-in-fast);
+        }
+
+    .bi-animate-spring-right-150-ease-in-fastest
+    {
+      animation: animateSpringRight150 var(--animation-ease-in-fastest);
+      -webkit-animation: animateSpringRight150 var(--animation-ease-in-fastest);
+    }
+
+        .bi-animate-spring-right-150-ease-in-fastest:active
+        {
+          animation: animateSpringRight150 var(--animation-ease-in-fastest);
+          -webkit-animation: animateSpringRight150 var(--animation-ease-in-fastest);
+        }
+
+/**
+ * separate the element-role from the element-animation
+ */
+
+/* 
+
+.bi-button:active
+{
+  animation: animatePush75 var(--animation-linear);
+  -webkit-animation: animatePush75 var(--animation-linear);
+}
+
+*/
+
+/**
+ * keep at the end
+ * overwrites any
+ */
+
+.bi-animate-none
+{
+  animation: none !important;
+  -webkit-animation: none !important;
+}
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * SCROLLBAR
+ */
+
+::-webkit-scrollbar
+{
+  position: absolute;
+
+  /**
+   * applied on: horizontal-scroll
+   */
+
+  width: 0.5rem;
+
+  /**
+   * applied on: vertical-scroll
+   */
+
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-track
+{
+  border-radius: 1000rem;
+}
+
+::-webkit-scrollbar-thumb
+{
+  border-radius: 1000rem;
+  box-shadow: inset 0px 0px 0.75rem var(--gray-binary);
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+  /**
+   * on-hover
+   */
+  
+  
+}
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * TAGS
+ */
+
+/**
+ * Markup selectors are considered a poor design choice
+ * markup selectors overwrite other stylesheets
+ * use classes instead
+ * table -> table.table, etc
+ */
+
+body.bi-body {
+  color: var(--color);
+  font-size: var(--font-size);
+  margin: 0;
+  background-repeat: repeat;
+  background-color: var(--background-body);
+  background-image: var(--background-image-body);
+}
+
+/**
+ * markup+class selectors stronger than class selectors
+ */
+
+footer.bi-footer {
+  padding: 0.5rem;
+  background-color: var(--background-footer);
+}
+
+/**
+ * Bootstrap 5 also uses such syntax
+ * this prevents other stylesheets overwriting
+ * h1.h1
+ */
+
+h1.bi-h1 {
+  font-weight: var(--font-normal);
+  text-decoration: none;
+  font-family: var(--font-family-header);
+  color: var(--color-title);
+  font-size: 2.25rem;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+    h1.bi-h1-line {
+      border-bottom: 0.15rem solid var(--color-title) !important;
+      font-weight: var(--font-normal);
+      text-decoration: none;
+      font-family: var(--font-family-header);
+      color: var(--color-title);
+      font-size: 2.25rem;
+      padding: 0.25rem 0;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+
+/**
+ * youtube uses css classes starting with yt-...
+ */
+
+h2.bi-h2 {
+  font-weight: var(--font-normal);
+  font-family: var(--font-family-header);
+  color: var(--color-title);
+  font-size: 2rem;
+  padding: 1.25rem 0;
+  text-align: center;
+}
+
+    h2.bi-h2-line {
+      border-bottom: 0.15rem solid var(--color-title) !important;
+      font-weight: var(--font-normal);
+      font-family: var(--font-family-header);
+      color: var(--color-title);
+      font-size: 2rem;
+      padding: 0.25rem 0;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+h3.bi-h3 {
+  font-weight: var(--font-normal);
+  font-family: var(--font-family-header);
+  color: var(--color-title);
+  font-size: 1.75rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+    h3.bi-h3-line {
+      border-bottom: 0.1rem solid var(--color-title) !important;
+      font-weight: var(--font-normal);
+      font-family: var(--font-family-header);
+      color: var(--color-title);
+      font-size: 1.75rem;
+      padding: 0.25rem 0;
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+
+h4.bi-h4 {
+  font-weight: var(--font-normal);
+  font-family: var(--font-family-header);
+  color: var(--color-title);
+  font-size: 1.5rem;
+  padding: 0.75rem 0;
+  text-align: center;
+}
+
+    h4.bi-h4-line {
+      border-bottom: 0.1rem solid var(--color-title) !important;
+      font-weight: var(--font-normal);
+      font-family: var(--font-family-header);
+      color: var(--color-title);
+      font-size: 1.5rem;
+      padding: 0.25rem 0;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+h5.bi-h5 {
+  font-weight: var(--font-normal);
+  font-family: var(--font-family-header);
+  color: var(--color-title);
+  font-size: 1.25rem;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+    h5.bi-h5-line {
+      border-bottom: 0.1rem solid var(--color-title) !important;
+      font-weight: var(--font-normal);
+      font-family: var(--font-family-header);
+      color: var(--color-title);
+      font-size: 1.25rem;
+      padding: 0.25rem 0;
+      margin-bottom: 0.25rem;
+      text-align: center;
+    }
+
+h6.bi-h6 {
+  font-weight: var(--font-normal);
+  font-family: var(--font-family-header);
+  color: var(--color-title);
+  font-size: 1rem;  /* legibility */
+  padding: 0.25rem 0;
+  text-align: center;
+}
+
+    h6.bi-h6-line {
+      border-bottom: 0.1rem solid var(--color-title) !important;
+      font-weight: var(--font-normal);
+      font-family: var(--font-family-header);
+      color: var(--color-title);
+      font-size: 1rem;  /* legibility */
+      padding: 0.25rem 0;
+      margin-bottom: 0rem;
+      text-align: center;
+    }
+
+header.bi-header {
+  padding: 0.5rem;
+  background-color: var(--background-header);
+}
+
+input.bi-input {
+  font-size: inherit;
+  color: inherit;
+  border: 0.1rem solid var(--background-alt);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--transparent);
+}
+
+    /* **************************************** */
+    /*  vvv INPUT NUMBER HIDE SPIN BUTTONS vvv  */
+    /* **************************************** */
+
+    /* https://stackoverflow.com/questions/3790935/can-i-hide-the-html5-number-input-s-spin-box */
+
+    input[type=number].bi-input.hide-spin-buttons::-webkit-outer-spin-button,
+    input[type=number].bi-input.hide-spin-buttons::-webkit-inner-spin-button
+    {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number].bi-input.hide-spin-buttons
+    {
+      -moz-appearance: textfield;
+    }
+
+    /* **************************************** */
+    /*  ^^^ INPUT NUMBER HIDE SPIN BUTTONS ^^^  */
+    /* **************************************** */
+
+    input.bi-input::placeholder
+    {
+      color: var(--color-placeholder);
+    }
+
+input[type=file].bi-input
+{
+  border: 0;
+  border-radius: 0;
+}
+
+label.bi-label
+{
+  cursor: pointer;
+}
+
+main.bi-main
+{
+  padding: 0.5rem;
+  background-color: var(--background-main);
+}
+
+nav.bi-nav
+{
+  padding: 0.5rem;
+  background-color: var(--background-nav);
+}
+
+option.bi-option
+{
+  color: var(--black);
+  /* CANNOT STYLE option */
+  /* option IS STYLED BY Windows */
+  /* ALT: MAKE CUSTOM DROPDOWN (POPUP POP-UP + input radio) */
+}
+
+/**
+ * setting paragraph margin to 0 is a generic idea
+ * it doesnt require special class considerations
+ */
+
+p
+{
+	margin: 0px;
+}
+
+section.bi-section
+{
+  padding: 0.5rem;
+  background-color: var(--background-section);
+}
+
+select.bi-select
+{
+  font-size: inherit;
+  color: inherit;
+  outline: none;
+  border: 0.1rem solid var(--background-alt);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--transparent);
+
+}
+
+    select.bi-select::placeholder
+    {
+      color: inherit;
+    }
+
+span.bi-span
+{
+  color: inherit;
+
+}
+
+table, tr, td, th
+{
+  border-collapse: collapse !important;
+}
+
+table.bi-b-01
+{
+  border: 0.1rem solid var(--border-table) !important;
+}
+
+    table.bi-b-01 tr
+    {
+      border: 0.1rem solid var(--border-table) !important;
+    }
+
+    table.bi-b-01 td
+    {
+      border: 0.1rem solid var(--border-table) !important;
+    }
+
+    table.bi-b-01 th
+    {
+      border: 0.1rem solid var(--border-table) !important;
+    }
+
+/* ************************* */
+/* vvv RESPONSIVE TABLES vvv */
+/* ************************* */
+
+/**
+ * one of the greatest BiWork classes
+ */
+
+table.bi-responsive
+{
+  /* shrink table cells on mobile */
+  table-layout: fixed;
+}
+
+table.bi-responsive tr
+{
+  display: flex;
+}
+
+    /* styling */
+    table.bi-responsive tr + tr
+    {
+      /* ten wiersz wcześniej */
+      border-top: var(--border-normal) solid var(--border-table);
+    }
+
+table.bi-responsive td,
+table.bi-responsive th
+{
+  border: 0;
+  flex: 1 0 1%;
+
+  /**
+   * mobile: scroll
+   * desktop: none
+   */
+  overflow-x: auto;
+}
+
+    /* styling */
+    table.bi-responsive td + td,
+    table.bi-responsive th + th,
+    table.bi-responsive td + th,
+    table.bi-responsive th + td
+    {
+      /* to pole wcześniej */
+      border-left: var(--border-normal) solid var(--border-table);
+    }
+
+table.bi-responsive td::-webkit-scrollbar,
+table.bi-responsive th::-webkit-scrollbar
+{
+  display: none;
+}
+
+table.bi-responsive-b-01
+{
+  border: 0rem !important;
+  border-top: 0.1rem solid var(--border-table) !important;
+  border-left: 0.1rem solid var(--border-table) !important;
+}
+
+    table.bi-responsive-b-01 tr
+    {
+      border: 0rem !important;
+    }
+
+    table.bi-responsive-b-01 td,
+    table.bi-responsive-b-01 th
+    {
+      border: 0rem !important;
+      border-right: 0.1rem solid var(--border-table) !important;
+      border-bottom: 0.1rem solid var(--border-table) !important;
+    }
+
+/* ************************** */
+/* ^^^ RESPONSIVE TABLES ^^^  */
+/* ************************** */
+
+table.bi-table, table.bi-table td, table.bi-table th
+{
+  border-collapse: collapse;
+  border: var(--border-normal) solid var(--border-table);
+  padding: 0.25rem;
+}
+
+textarea.bi-textarea
+{
+  background-color: var(--transparent);
+  border: 0.1rem solid var(--background-alt);
+  border-radius: 0.5rem;
+  color: inherit;
+  font-size: inherit;
+  min-height: 4rem;
+  padding: 0.5rem;
+  resize: vertical;
+}
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * CHILDREN CLASSES
+ * 
+ * use case
+ *
+ *   foreach
+ */
+
+/**
+ * child
+ */
+
+.bi-child-p-0 > :first-child
+{
+  padding: 0rem !important;
+}
+
+    .bi-child-pl-0 > :first-child
+    {
+      padding-left: 0rem !important;
+    }
+
+    .bi-child-pr-04 > :first-child
+    {
+      padding-right: 0.4rem !important;
+    }
+
+    .bi-child-pr-1 > :first-child
+    {
+      padding-right: 1rem !important;
+    }
+
+/**
+ * children-all
+ */
+
+.bi-children-all-pr-1 *
+{
+  padding-right: 1rem !important;
+}
+
+.bi-children-all-b-01 *
+{
+  border: 0.1rem solid var(--border-table) !important;
+}
+
+/**
+ * children
+ */
+
+.bi-children-background > *
+{
+	background-color: var(--background) !important;
+}
+
+.bi-children-curvy-1 > *
+{
+  border-radius: 1rem !important;
+}
+
+.bi-children-m-0 > *
+{
+  margin: 0rem !important;
+}
+
+    .bi-children-mb-1 > *
+    {
+      margin-bottom: 1rem !important;
+    }
+
+    .bi-children-mha > *
+    {
+      margin: 0rem auto !important;
+    }
+
+    .bi-children-mt-04 > *
+    {
+      margin-top: 0.4rem !important;
+    }
+
+    .bi-children-mt-1 > *
+    {
+      margin-top: 1rem !important;
+    }
+
+    .bi-children-mt-2 > *
+    {
+      margin-top: 2rem !important;
+    }
+
+.bi-children-p-0 > *
+{
+  padding: 0rem !important;
+}
+
+    .bi-children-p-01 > *
+    {
+      padding: 0.1rem !important;
+    }
+
+    .bi-children-p-02 > *
+    {
+      padding: 0.2rem !important;
+    }
+
+    .bi-children-p-03 > *
+    {
+      padding: 0.3rem !important;
+    }
+
+    .bi-children-p-04 > *
+    {
+      padding: 0.4rem !important;
+    }
+
+    .bi-children-p-1 > *
+    {
+      padding: 1rem !important;
+    }
+
+    .bi-children-p-2 > *
+    {
+      padding: 2rem !important;
+    }
+
+    .bi-children-p-3 > *
+    {
+      padding: 3rem !important;
+    }
+
+    .bi-children-p-4 > *
+    {
+      padding: 4rem !important;
+    }
+
+    .bi-children-pb-0 > *
+    {
+      padding-bottom: 0rem !important;
+    }
+
+    .bi-children-pb-1 > *
+    {
+      padding-bottom: 1rem !important;
+    }
+
+    .bi-children-ph-0 > *
+    {
+      padding-left: 0rem !important;
+      padding-right: 0rem !important;
+    }
+
+    .bi-children-ph-01 > *
+    {
+      padding-left: 0.1rem !important;
+      padding-right: 0.1rem !important;
+    }
+
+    .bi-children-ph-02 > *
+    {
+      padding-left: 0.2rem !important;
+      padding-right: 0.2rem !important;
+    }
+
+    .bi-children-ph-03 > *
+    {
+      padding-left: 0.3rem !important;
+      padding-right: 0.3rem !important;
+    }
+
+    .bi-children-ph-04 > *
+    {
+      padding-left: 0.4rem !important;
+      padding-right: 0.4rem !important;
+    }
+
+    .bi-children-ph-1 > *
+    {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .bi-children-ph-2 > *
+    {
+      padding-left: 2rem !important;
+      padding-right: 2rem !important;
+    }
+
+    .bi-children-ph-3 > *
+    {
+      padding-left: 3rem !important;
+      padding-right: 3rem !important;
+    }
+
+    .bi-children-ph-4 > *
+    {
+      padding-left: 4rem !important;
+      padding-right: 4rem !important;
+    }
+
+    .bi-children-pr-1 > *
+    {
+      padding-right: 1rem !important;
+    }
+
+.bi-children-w-max-256 > *
+{
+  max-width: 256px !important;
+}
+
+/**
+ * children-not-last
+ * 
+ * foreach: apply styles to all children but last
+ * foreach: power-style
+ */
+
+.bi-children-not-last-curvy-1 > :not(:last-child)
+{
+  border-radius: 1rem !important;
+}
+
+.bi-children-not-last-m-0 > :not(:last-child)
+{
+  margin-bottom: 0rem !important;
+}
+
+    .bi-children-not-last-mb-1 > :not(:last-child)
+    {
+      margin-bottom: 1rem !important;
+    }
+
+    .bi-children-not-last-mt-1 > :not(:last-child)
+    {
+      margin-top: 1rem !important;
+    }
+
+.bi-children-not-last-p-0 > :not(:last-child)
+{
+  padding: 0rem !important;
+}
+
+    .bi-children-not-last-pr-04 > :not(:last-child)
+    {
+      padding-right: 0.4rem !important;
+    }
+
+    .bi-children-not-last-pr-1 > :not(:last-child)
+    {
+      padding-right: 1rem !important;
+    }
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * CLASSES
+ */
+
+.bi-active
+{
+  background-color: var(--background-active) !important;
+  color: var(--color-active) !important;
+  filter: none !important;
+}
+
+    .bi-active:hover
+    {
+      background-color: var(--background-active-hover) !important;
+    }
+
+    .bi-inactive
+    {
+      background-color: var(--background-inactive) !important;
+      color: var(--color-inactive) !important;
+      filter: none !important;
+    }
+
+        .bi-inactive:hover
+        {
+          background-color: var(--background-inactive-hover) !important;
+        }
+
+/**
+ * vvv Border Vertical/Horizontal Pipes vvv
+ */
+
+/* Keep 0 on top = Overwrittable */
+
+.bi-b-0
+{
+  border: 0rem solid;
+}
+
+    .bi-b-001
+    {
+      border: 0.01rem var(--border-table) solid;
+    }
+
+    .bi-b-002
+    {
+      border: 0.02rem solid var(--border-table);
+    }
+
+    .bi-b-003
+    {
+      border: 0.03rem solid var(--border-table);
+    }
+
+    .bi-b-004
+    {
+      border: 0.04rem solid var(--border-table);
+    }
+
+    .bi-b-01
+    {
+      border: 0.1rem solid var(--border-table);
+    }
+
+    .bi-b-02
+    {
+      border: 0.2rem solid var(--border-table);
+    }
+
+    .bi-b-03
+    {
+      border: 0.3rem solid var(--border-table);
+    }
+
+    .bi-b-04
+    {
+      border: 0.4rem solid var(--border-table);
+    }
+
+    .bi-bb-0
+    {
+      border-bottom: 0rem solid var(--border-table);
+    }
+
+    .bi-bb-01
+    {
+      border-bottom: 0.1rem solid var(--border-table);
+    }
+
+    .bi-bb-02
+    {
+      border-bottom: 0.2rem solid var(--border-table);
+    }
+
+    .bi-bb-03
+    {
+      border-bottom: 0.3rem solid var(--border-table);
+    }
+
+    .bi-bl-0
+    {
+      border-left: 0rem solid var(--border-table);
+    }
+
+    .bi-bl-01
+    {
+      border-left: 0.1rem solid var(--border-table);
+    }
+
+    .bi-bl-02
+    {
+      border-left: 0.2rem solid var(--border-table);
+    }
+
+    .bi-bl-03
+    {
+      border-left: 0.3rem solid var(--border-table);
+    }
+
+    .bi-bl-04
+    {
+      border-left: 0.4rem solid var(--border-table);
+    }
+
+    /**
+      * this left border on hover
+      * doesnt move the contents inside
+      */
+
+    .bi-bl-04-hover {
+      position: relative;
+    }
+
+    .bi-bl-04-hover:hover::before {
+
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+
+      height: 100%;
+      border-left: 0.2rem solid var(--border-alt);
+      border-right: 0.2rem solid var(--border-alt);
+      position: absolute;
+      left: 0rem;
+      top: 0rem;
+      content: '';
+    }
+
+    .bi-bl-1-hover {
+      position: relative;
+    }
+
+    .bi-bl-1-hover:hover::before {
+
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+
+      height: 100%;
+      border-left: 0.5rem solid var(--border-alt);
+      border-right: 0.5rem solid var(--border-alt);
+      position: absolute;
+      left: 0rem;
+      top: 0rem;
+      content: '';
+    }
+
+    .bi-br-0
+    {
+      border-right: 0rem solid var(--border-table);
+    }
+
+    .bi-br-01
+    {
+      border-right: 0.1rem solid var(--border-table);
+    }
+
+    .bi-br-02
+    {
+      border-right: 0.2rem solid var(--border-table);
+    }
+
+    .bi-br-03
+    {
+      border-right: 0.3rem solid var(--border-table);
+    }
+
+    .bi-br-04
+    {
+      border-right: 0.4rem solid var(--border-table);
+    }
+
+    .bi-bt-0
+    {
+      border-top: 0rem solid var(--border-table);
+    }
+
+    .bi-bt-01
+    {
+      border-top: 0.1rem solid var(--border-table);
+    }
+
+    .bi-bt-02
+    {
+      border-top: 0.2rem solid var(--border-table);
+    }
+
+    .bi-bt-03
+    {
+      border-top: 0.3rem solid var(--border-table);
+    }
+
+    .bi-bt-04
+    {
+      border-top: 0.4rem solid var(--border-table);
+    }
+
+    .bi-bt-1
+    {
+      border-top: 1rem solid var(--border-table);
+    }
+
+/**
+ * ^^^ Border Vertical/Horizontal Pipes ^^^
+ */
+
+.bi-block {
+  display: block !important;
+}
+
+/**
+ * x: 50 %
+ * y: 100 %
+ * blur: 100%
+ * spread: -50%
+ */
+
+.bi-box-shadow-01
+{
+  box-shadow: 0rem 0rem 0.1rem 0.1rem var(--box-shadow-color) !important;
+}
+
+    .bi-box-shadow-02
+    {
+      box-shadow: 0rem 0rem 0.2rem 0.2rem var(--box-shadow-color) !important;
+    }
+
+    .bi-box-shadow-down-04
+    {
+      box-shadow:
+        0.2rem 0.4rem 0.4rem -0.2rem var(--box-shadow-color),
+        -0.2rem 0.4rem 0.4rem -0.2rem var(--box-shadow-color)
+        !important;
+    }
+
+    .bi-box-shadow-down-1
+    {
+      box-shadow:
+        0.5rem 1rem 1rem -0.5rem var(--box-shadow-color),
+        -0.5rem 1rem 1rem -0.5rem var(--box-shadow-color)
+        !important;
+    }
+
+/**
+ * (A) define layout
+ */
+
+.bi-button
+{
+  font-size: inherit;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+/**
+ * (A) define color
+ */
+
+.bi-button-button
+{
+  background-color: var(--button-button-background-color);
+  border: var(--button-button-border);
+  color: var(--button-button-color);
+}
+
+    .bi-button-button:hover
+    {
+      background-color: var(--button-button-background-color-hover);
+    }
+
+    .bi-button-button:focus-within
+    {
+      
+    }
+
+.bi-button-icon
+{
+
+}
+
+    .bi-button-icon:hover
+    {
+      background-color: var(--white);
+    }
+
+.bi-button-route
+{
+  border: 0rem solid var(--gray-dark);
+  background-color: var(--background-interactable);
+  color: var(--color-route);
+}
+
+    .bi-button-route:hover
+    {
+      background-color: var(--background-interactable-hover);
+    }
+
+.bi-button-submit
+{
+  border: 0rem solid var(--gray-dark);
+  background-color: var(--background-interactable);
+  color: var(--color-submit);
+}
+
+    .bi-button-submit:hover
+    {
+      background-color: var(--background-interactable-hover);
+    }
+
+.bi-circle-shape
+{
+  border-radius: 50%;
+}
+
+.bi-container
+{
+  margin: 0rem auto;
+  overflow-x: hidden;
+  background-color: var(--background);
+}
+
+.bi-cursor {
+  cursor: default !important;
+}
+
+.bi-curvy-0
+{
+  border-radius: 0rem !important;
+}
+
+    .bi-curvy-01
+    {
+      border-radius: 0.1rem !important;
+    }
+
+    .bi-curvy-02
+    {
+      border-radius: 0.2rem !important;
+    }
+
+    .bi-curvy-03
+    {
+      border-radius: 0.3rem !important;
+    }
+
+    .bi-curvy-04
+    {
+      border-radius: 0.4rem !important;
+    }
+
+    .bi-curvy-1
+    {
+      border-radius: 1rem !important;
+    }
+
+    .bi-curvy-2
+    {
+      border-radius: 2rem !important;
+    }
+
+    .bi-curvy-3
+    {
+      border-radius: 3rem !important;
+    }
+
+    .bi-curvy-4
+    {
+      border-radius: 4rem !important;
+    }
+
+.bi-curvy-b-0
+{
+  border-bottom-left-radius: 0rem !important;
+  border-bottom-right-radius: 0rem !important;
+}
+
+    .bi-curvy-b-04
+    {
+      border-bottom-left-radius: 0.4rem !important;
+      border-bottom-right-radius: 0.4rem !important;
+    }
+
+    .bi-curvy-b-1
+    {
+      border-bottom-left-radius: 1rem !important;
+      border-bottom-right-radius: 1rem !important;
+    }
+
+.bi-curvy-t-0
+{
+  border-top-left-radius: 0rem !important;
+  border-top-right-radius: 0rem !important;
+}
+
+    .bi-curvy-t-1
+    {
+      border-top-left-radius: 1rem !important;
+      border-top-right-radius: 1rem !important;
+    }
+
+.bi-curvy-round
+{
+  border-radius: 1000rem !important;
+}
+
+.bi-decoration-none
+{
+  text-decoration: none !important;
+}
+
+.bi-display-none {
+  display: none !important;
+}
+
+.bi-filter-blacken
+{
+  filter: brightness(0) !important;
+}
+
+.bi-filter-bleach
+{
+  filter: brightness(1000) !important;
+}
+
+.bi-filter-invert
+{
+  filter: invert(1) !important;
+}
+
+.bi-fit
+{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bi-fix-to-bottom
+{
+  position: fixed;
+  bottom: 0rem;
+}
+
+    .bi-fix-to-bottom-1
+    {
+      position: fixed;
+      bottom: 1rem;
+    }
+
+        .bi-fix-to-bottom-1-center
+        {
+          position: fixed;
+          bottom: 1rem;
+          left: 50%;
+          transform: translate(-50%, 0%);
+        }
+
+.bi-fix-to-left
+{
+  position: fixed;
+  left: 0rem;
+
+}
+
+.bi-fix-to-top
+{
+  position: fixed;
+  top: 0rem;
+
+}
+
+.bi-flexbox
+{
+  display: flex !important;
+  flex-flow: row wrap;
+}
+
+.bi-flexbox-no-media
+{
+  display: flex !important;
+  flex-flow: row wrap;
+}
+
+.bi-flexbox-horizontal
+{
+  justify-content: center;
+}
+
+    .bi-flexbox-horizontal-no-media
+    {
+      justify-content: center;
+    }
+
+.bi-flexbox-horizontal-space
+{
+  justify-content: space-evenly;
+}
+
+    .bi-flexbox-horizontal-space-no-media
+    {
+      justify-content: space-evenly;
+    }
+
+        .bi-flexbox-horizontal-space-around
+        {
+          /* margin AROUND each element */
+          justify-content: space-around;
+        }
+
+            .bi-flexbox-horizontal-space-around-no-media
+            {
+              /* margin AROUND each element */
+              justify-content: space-around;
+            }
+
+        .bi-flexbox-horizontal-space-between
+        {
+          /* as much space BETWEEN elements */
+          justify-content: space-between;
+        }
+
+            .bi-flexbox-horizontal-space-between-no-media
+            {
+              /* as much space BETWEEN elements */
+              justify-content: space-between;
+            }
+
+.bi-flexbox-horizontal-left
+{
+  justify-content: flex-start;
+}
+
+    /**
+     * <512 px : columns swap with rows
+     * check : @media (max-width: 511px)
+     */
+
+    /*
+
+    .bi-flexbox-horizontal-left-no-media
+    {
+      justify-content: flex-start;
+    }
+
+    */
+
+.bi-flexbox-horizontal-right
+{
+  justify-content: flex-end;
+}
+
+.bi-flexbox-vertical
+{
+  align-items: center;
+}
+
+    /**
+     * @media smartphone
+     *
+     *   note that applying .bi-flexbox-horizontal
+     *   overwrites this class @media smartphone
+     *   reason: rows become columns
+     *   and vice versa
+     * 
+     * rule of thumb
+     * 
+     *   always apply *-no-media
+     *   in pairs
+     */
+
+    .bi-flexbox-vertical-no-media
+    {
+      align-items: center;
+    }
+
+.bi-flexbox-vertical-bottom
+{
+  align-items: flex-end;
+}
+
+.bi-flexbox-vertical-top
+{
+  align-items: flex-start;
+}
+
+.bi-flexbox-vertical-text
+{
+  align-items: first baseline;
+}
+
+/**
+ * layout building, div positioning
+ * dont forget wrapper: .bi-overflow-auto
+ *
+ * float layout
+ *
+ *   organizes elements both horizontally and vertically
+ */
+
+.bi-float-left
+{
+  float: left;
+}
+
+.bi-float-right
+{
+  float: right;
+}
+
+.bi-focused
+{
+  border: 0.1rem solid var(--border-focus);
+  outline: 0.25rem solid var(--outline-focus);
+}
+
+/* :focused or :focused-within */
+.bi-focused-spotlight:focus-within
+{
+  position: relative;
+  z-index: var(--highest);
+}
+
+.bi-focused-spotlight:focus-within:after
+{
+  background-color: var(--black-binary);
+  content: '';
+  display: block;
+  height: 100vh;
+  left: 0%;
+  position: fixed;
+  top: 0%;
+  width: 100vw;
+  z-index: var(--low);
+
+}
+
+.bi-font-bold
+{
+  font-weight: var(--font-thick) !important;
+}
+
+.bi-font-xxxl
+{
+  font-size: var(--font-xxxl) !important;
+}
+
+    .bi-font-xxl
+    {
+      font-size: var(--font-xxl) !important;
+    }
+
+    .bi-font-xl
+    {
+      font-size: var(--font-xl) !important;
+    }
+
+    .bi-font-l
+    {
+      font-size: var(--font-l) !important;
+    }
+
+    .bi-font-m
+    {
+      font-size: var(--font-m) !important;
+    }
+
+    .bi-font-s
+    {
+      font-size: var(--font-s) !important;
+    }
+
+    .bi-font-xs
+    {
+      font-size: var(--font-xs) !important;
+    }
+
+    .bi-font-xxs
+    {
+      font-size: var(--font-xxs) !important;
+    }
+
+.bi-h-0
+{
+  height: 0em !important;
+}
+
+.bi-h-04
+{
+  height: 0.4em !important;
+}
+
+.bi-h-1
+{
+  height: 1rem !important;
+}
+
+.bi-h-2
+{
+  height: 2rem !important;
+}
+
+.bi-h-3
+{
+  height: 3rem !important;
+}
+
+.bi-h-4
+{
+  height: 4rem !important;
+}
+
+.bi-h-100
+{
+  height: 100% !important;
+}
+
+.bi-highlight
+{
+  border: 0.1rem solid var(--white);
+  box-shadow:
+    var(--black)
+    0rem 0rem 1rem
+    0rem /* spread */;
+}
+
+.bi-invert-hover:hover
+{
+  filter: invert(1);
+}
+
+.bi-darken-hover:hover
+{
+  filter: brightness(0.5);
+}
+
+.bi-lighten-hover:hover
+{
+  filter: brightness(2);
+}
+
+.bi-icon-holder-16
+{
+	width: 16px !important;
+  /* height: 16px OVERFLOWS IMAGE */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.bi-icon-holder-32
+{
+	width: 32px !important;
+  /* height: 32px OVERFLOWS IMAGE */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.bi-icon-holder-48
+{
+	width: 48px !important;
+  /* height: 48px OVERFLOWS IMAGE */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.bi-icon-holder-64
+{
+  width: 64px !important;
+  /* height: 64px OVERFLOWS IMAGE */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bi-icon-holder-128
+{
+  width: 128px !important;
+  /* height: 128px OVERFLOWS IMAGE */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+    .bi-icon-holder-1
+    {
+      width: 1rem !important;
+      height: 1rem !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bi-icon-holder-2
+    {
+      width: 2rem !important;
+      height: 2rem !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bi-icon-holder-3
+    {
+      width: 3rem !important;
+      height: 3rem !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bi-icon-holder-4
+    {
+      width: 4rem !important;
+      height: 5rem !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+.bi-icon-holder-256
+{
+  width: 256px !important;
+  /* height: 256px OVERFLOWS IMAGE */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bi-inline
+{
+  display: inline !important;
+}
+
+/**
+ * single property-value name
+ * indicates it IS important
+ *
+ * inline: insides determine width and height
+ * inline-block: width and height settable
+ */
+
+.bi-inline-block
+{
+  display: inline-block !important;
+}
+
+.bi-inline-block-middle
+{
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+.bi-inline-block-top
+{
+  display: inline-block !important;
+  vertical-align: top !important;
+}
+
+.bi-link
+{
+  text-decoration: underline;
+  font-size: inherit;
+  color: var(--color-link);
+}
+
+    .bi-link:hover
+    {
+      color: var(--color-link-hover);
+    }
+
+.bi-ma
+{
+	margin: auto !important;
+}
+
+.bi-mha
+{
+	margin: 0rem auto !important;
+}
+
+.bi-m-0
+{
+	margin: 0rem !important;
+}
+
+    .bi-m-1
+    {
+      margin: 1rem !important;
+    }
+
+.bi-mb-0
+{
+  margin-bottom: 0rem !important;
+}
+
+    .bi-mb-01
+    {
+      margin-bottom: 0.1rem !important;
+    }
+
+    .bi-mb-02
+    {
+      margin-bottom: 0.2rem !important;
+    }
+
+    .bi-mb-03
+    {
+      margin-bottom: 0.3rem !important;
+    }
+
+    .bi-mb-04
+    {
+      margin-bottom: 0.4rem !important;
+    }
+
+    .bi-mb-1
+    {
+      margin-bottom: 1rem !important;
+    }
+
+    .bi-mb-2
+    {
+      margin-bottom: 2rem !important;
+    }
+
+    .bi-mb-3
+    {
+      margin-bottom: 3rem !important;
+    }
+
+    .bi-mb-4
+    {
+      margin-bottom: 4rem !important;
+    }
+
+/**
+ * margin horizontal = bad idea
+ *
+ * border-box: box-sizing doesnt abide
+ *
+ * solution: use wrapper and padding
+ */
+
+.bi-ml-04
+{
+	margin-left: 0.4rem !important;
+}
+
+    .bi-ml-1
+    {
+      margin-left: 1rem !important;
+    }
+
+.bi-mr-04
+{
+	margin-right: 0.4rem !important;
+}
+
+    .bi-mr-1
+    {
+      margin-right: 1rem !important;
+    }
+
+.bi-mt-0
+{
+  margin-top: 0rem !important;
+} 
+
+    .bi-mt-01
+    {
+      margin-top: 0.1rem !important;
+    }
+
+    .bi-mt-02
+    {
+      margin-top: 0.2rem !important;
+    }
+
+    .bi-mt-03
+    {
+      margin-top: 0.3rem !important;
+    }
+
+    .bi-mt-04
+    {
+      margin-top: 0.4rem !important;
+    }
+
+    .bi-mt-1
+    {
+      margin-top: 1rem !important;
+    }
+
+    .bi-mt-2
+    {
+      margin-top: 2rem !important;
+    }
+
+    .bi-mt-3
+    {
+      margin-top: 3rem !important;
+    }
+
+    .bi-mt-4
+    {
+      margin-top: 4rem !important;
+    }
+
+.bi-mv-01
+{
+	margin-top: 0.1rem;
+	margin-bottom: 0.1rem;
+}
+
+.bi-mv-02
+{
+	margin-top: 0.2rem;
+	margin-bottom: 0.2rem;
+}
+
+.bi-mv-03
+{
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+}
+
+.bi-mv-04
+{
+	margin-top: 0.4rem;
+	margin-bottom: 0.4rem;
+}
+
+.bi-mv-1
+{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.bi-mv-2
+{
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.bi-mv-3
+{
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
+.bi-mv-4
+{
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+}
+
+.bi-navigation-horizontal
+{
+  list-style-type: none;
+	padding: 0;
+
+}
+
+.bi-navigation-horizontal-element
+{
+  display: inline-block;
+
+}
+
+.bi-navigation-vertical
+{
+  list-style-type: none;
+	padding: 0;
+
+}
+
+.bi-navigation-vertical-element
+{
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  border-radius: 0rem;
+  border: 0rem solid black;
+
+}
+
+.bi-no-scroll::-webkit-scrollbar
+{
+  width: 0rem;
+  height: 0rem;
+}
+
+.bi-notification
+{
+  text-align: justify;
+  color: var(--color-notification);
+  border: 0.1rem solid var(--border-notification);
+  background-color: var(--background-notification);
+  font-size: inherit;
+  text-decoration: none;
+  display: inline-block;
+  width: auto;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+}
+
+.bi-nowrap
+{
+  white-space: nowrap;
+}
+
+.bi-outline-0
+{
+  outline: 0px solid black !important;
+}
+
+    .bi-outline-0:hover
+    {
+      outline: 0px solid black !important;
+
+    }
+
+    .bi-outline-0:active
+    {
+      outline: 0px solid black !important;
+
+    }
+
+    .bi-outline-0:focus
+    {
+      outline: 0px solid black !important;
+
+    }
+
+    .bi-outline-0:focus-within
+    {
+      outline: 0px solid black !important;
+
+    }
+
+.bi-outline-focus-01:focus
+{
+  outline: 0.1rem solid var(--outline-focus);
+}
+
+.bi-outline-focus-02:focus
+{
+  outline: 0.2rem solid var(--outline-focus);
+
+}
+
+.bi-outline-focus-03:focus
+{
+  outline: 0.3rem solid var(--outline-focus);
+
+}
+
+.bi-outline-focus-04:focus
+{
+  outline: 0.4rem solid var(--outline-focus);
+
+}
+
+.bi-overflow-auto
+{
+  overflow: auto !important;
+
+  /**
+   * deprecated
+   */
+  
+  /* overflow: overlay; */
+}
+
+.bi-overflow-hidden
+{
+  overflow: hidden !important;
+}
+
+.bi-overflow-visible
+{
+  overflow: visible !important;
+}
+
+/* Keep on top = Overwrittable */
+.bi-p-0
+{
+  padding: 0rem !important;
+}
+
+    .bi-p-01
+    {
+      padding: 0.1rem !important;
+    }
+
+    .bi-p-02
+    {
+      padding: 0.2rem !important;
+    }
+
+    .bi-p-03
+    {
+      padding: 0.3rem !important;
+    }
+
+    .bi-p-04
+    {
+      padding: 0.4rem !important;
+    }
+
+    .bi-p-1
+    {
+      padding: 1rem !important;
+    }
+
+    .bi-p-2
+    {
+      padding: 2rem !important;
+    }
+
+    .bi-p-3
+    {
+      padding: 3rem !important;
+    }
+
+    .bi-p-4
+    {
+      padding: 4rem !important;
+    }
+
+    .bi-pb-0
+    {
+      padding-bottom: 0rem !important;
+    }
+
+    .bi-pb-01
+    {
+      padding-bottom: 0.1rem !important;
+    }
+
+    .bi-pb-02
+    {
+      padding-bottom: 0.2rem !important;
+    }
+
+    .bi-pb-03
+    {
+      padding-bottom: 0.3rem !important;
+    }
+
+    .bi-pb-04
+    {
+      padding-bottom: 0.4rem !important;
+    }
+
+    .bi-pb-1
+    {
+      padding-bottom: 1rem !important;
+    }
+
+    .bi-pb-2
+    {
+      padding-bottom: 2rem !important;
+    }
+
+    .bi-pb-3
+    {
+      padding-bottom: 3rem !important;
+    }
+
+    .bi-pb-4
+    {
+      padding-bottom: 4rem !important;
+    }
+
+    .bi-ph-0
+    {
+      padding-left: 0rem !important;
+      padding-right: 0rem !important;
+    }
+
+    .bi-ph-01
+    {
+      padding-left: 0.1rem !important;
+      padding-right: 0.1rem !important;
+    }
+
+    .bi-ph-02
+    {
+      padding-left: 0.2rem !important;
+      padding-right: 0.2rem !important;
+    }
+
+    .bi-ph-1
+    {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .bi-ph-2
+    {
+      padding-left: 2rem !important;
+      padding-right: 2rem !important;
+    }
+
+    .bi-ph-3
+    {
+      padding-left: 3rem !important;
+      padding-right: 3rem !important;
+    }
+
+    .bi-ph-4
+    {
+      padding-left: 4rem !important;
+      padding-right: 4rem !important;
+    }
+
+    .bi-ph-625
+    {
+      padding-left: 6.25% !important;
+      padding-right: 6.25% !important;
+    }
+
+    .bi-ph-125
+    {
+      padding-left: 12.5% !important;
+      padding-right: 12.5% !important;
+    }
+
+    .bi-ph-25
+    {
+      padding-left: 25% !important;
+      padding-right: 25% !important;
+    }
+
+    .bi-ph-50
+    {
+      padding-left: 50% !important;
+      padding-right: 50% !important;
+    }
+
+    .bi-pl-0
+    {
+      padding-left: 0rem !important;
+    }
+
+    .bi-pl-01
+    {
+      padding-left: 0.1rem !important;
+    }
+
+    .bi-pl-02
+    {
+      padding-left: 0.2rem !important;
+    }
+
+    .bi-pl-03
+    {
+      padding-left: 0.3rem !important;
+    }
+
+    .bi-pl-04
+    {
+      padding-left: 0.4rem !important;
+    }
+
+    .bi-pl-1
+    {
+      padding-left: 1rem !important;
+    }
+
+    .bi-pl-2
+    {
+      padding-left: 2rem !important;
+    }
+
+    .bi-pl-3
+    {
+      padding-left: 3rem !important;
+    }
+
+    .bi-pl-4
+    {
+      padding-left: 4rem !important;
+    }
+
+    .bi-pr-0
+    {
+      padding-right: 0rem !important;
+    }
+
+    .bi-pr-01
+    {
+      padding-right: 0.1rem !important;
+    }
+
+    .bi-pr-02
+    {
+      padding-right: 0.2rem !important;
+    }
+
+    .bi-pr-03
+    {
+      padding-right: 0.3rem !important;
+    }
+
+    .bi-pr-04
+    {
+      padding-right: 0.4rem !important;
+    }
+
+    .bi-pr-1
+    {
+      padding-right: 1rem !important;
+    }
+
+    .bi-pr-2
+    {
+      padding-right: 2rem !important;
+    }
+
+    .bi-pr-3
+    {
+      padding-right: 3rem !important;
+    }
+
+    .bi-pr-4
+    {
+      padding-right: 4rem !important;
+    }
+
+    .bi-pt-0
+    {
+      padding-top: 0rem !important;
+    }
+
+    .bi-pt-01
+    {
+      padding-top: 0.1rem !important;
+    }
+
+    .bi-pt-02
+    {
+      padding-top: 0.2rem !important;
+    }
+
+    .bi-pt-03
+    {
+      padding-top: 0.3rem !important;
+    }
+
+    .bi-pt-04
+    {
+      padding-top: 0.4rem !important;
+    }
+
+    .bi-pt-1
+    {
+      padding-top: 1rem !important;
+    }
+
+    .bi-pt-2
+    {
+      padding-top: 2rem !important;
+    }
+
+    .bi-pt-3
+    {
+      padding-top: 3rem !important;
+    }
+
+    .bi-pt-4
+    {
+      padding-top: 4rem !important;
+    }
+
+    .bi-pv-0
+    {
+      padding-top: 0rem !important;
+      padding-bottom: 0rem !important;
+    }
+
+    .bi-pv-01
+    {
+      padding-top: 0.1rem !important;
+      padding-bottom: 0.1rem !important;
+    }
+
+    .bi-pv-02
+    {
+      padding-top: 0.2rem !important;
+      padding-bottom: 0.2rem !important;
+    }
+
+    .bi-pv-03
+    {
+      padding-top: 0.3rem !important;
+      padding-bottom: 0.3rem !important;
+    }
+
+    .bi-pv-04
+    {
+      padding-top: 0.4rem !important;
+      padding-bottom: 0.4rem !important;
+    }
+
+    .bi-pv-1
+    {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+    }
+
+    .bi-pv-2
+    {
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
+    }
+
+    .bi-pv-3
+    {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+
+    .bi-pv-4
+    {
+      padding-top: 4rem !important;
+      padding-bottom: 4rem !important;
+    }
+
+    .bi-pv-625
+    {
+      padding-top: 6.25% !important;
+      padding-bottom: 6.25% !important;
+    }
+
+    .bi-pv-125
+    {
+      padding-top: 12.5% !important;
+      padding-bottom: 12.5% !important;
+    }
+
+    .bi-pv-25
+    {
+      padding-top: 25% !important;
+      padding-bottom: 25% !important;
+    }
+
+    .bi-pv-50
+    {
+      padding-top: 50% !important;
+      padding-bottom: 50% !important;
+    }
+
+.bi-popup-static
+{
+  transform: scale(1.25) !important;
+}
+
+.bi-pointer:hover
+{
+  cursor: pointer !important;
+}
+
+.bi-pointer:hover *
+{
+  cursor: pointer !important;
+}
+
+.bi-stick-to-top
+{
+  position: sticky;
+  top: 0rem;
+}
+
+.bi-table-top
+{
+  vertical-align: top;
+}
+
+.bi-table-bottom
+{
+  vertical-align: bottom;
+}
+
+.bi-toggle-show-children-hover .toggle-show-hidden-child
+{
+  display: none;
+}
+
+    .bi-toggle-show-children-hover:hover .toggle-show-hidden-child
+    {
+      display: block;
+    }
+
+.bi-toggle-show-children-hover .toggle-show-visible-child
+{
+  display: block;
+}
+
+    .bi-toggle-show-children-hover:hover .toggle-show-visible-child
+    {
+      display: none;
+    }
+
+.bi-vh-100
+{
+  /* Prevent other.css Overwrite */
+  height: 100vh !important;
+}
+
+    /* Think: <textarea> initial height */
+
+    .bi-vh-max-100
+    {
+      max-height: 100vh;
+    }
+
+    .bi-vh-min-100
+    {
+      min-height: 100vh;
+    }
+
+.bi-vh-50
+{
+  height: 50vh !important;
+}
+
+    .bi-vh-max-50
+    {
+      max-height: 50vh;
+    }
+
+    .bi-vh-min-50
+    {
+      min-height: 50vh;
+    }
+
+.bi-vh-25
+{
+  height: 25vh !important;
+}
+
+    .bi-vh-max-25
+    {
+      max-height: 25vh;
+    }
+
+    .bi-vh-min-25
+    {
+      min-height: 25vh;
+    }
+
+.bi-vh-125
+{
+  height: 12.5vh !important;
+}
+
+    .bi-vh-max-125
+    {
+      max-height: 12.5vh;
+    }
+
+    .bi-vh-min-125
+    {
+      min-height: 12.5vh;
+    }
+
+.bi-vh-625
+{
+  height: 6.25vh !important;
+}
+
+    .bi-vh-max-625
+    {
+      max-height: 6.25vh;
+    }
+
+    .bi-vh-min-625
+    {
+      min-height: 6.25vh;
+    }
+
+.bi-vw-100
+{
+  /* Prevent other.css Overwrite */
+  width: 100vw !important;
+}
+
+    .bi-vw-max-100
+    {
+      /* Prevent other.css Overwrite */
+      max-width: 100vw !important;
+    }
+
+.bi-vw-50
+{
+  width: 50vw !important;
+}
+
+    .bi-vw-max-50
+    {
+      max-width: 50vw !important;
+    }
+
+.bi-vw-25
+{
+  width: 25vw !important;
+}
+
+.bi-vw-125
+{
+  width: 12.5vw !important;
+}
+
+.bi-vw-625
+{
+  width: 6.25vw !important;
+}
+
+.bi-w-1
+{
+  width: 1rem !important;
+}
+
+    .bi-w-2
+    {
+      width: 2rem !important;
+    }
+
+    .bi-w-3
+    {
+      width: 3rem !important;
+    }
+
+    .bi-w-4
+    {
+      width: 4rem !important;
+    }
+
+.bi-w-100
+{
+  width: 100% !important;
+}
+
+    .bi-w-75
+    {
+      width: 75% !important;
+    }
+
+        .bi-w-75-no-media
+        {
+          width: 75% !important;
+        }
+
+    .bi-w-50
+    {
+      width: 50% !important;
+    }
+
+    .bi-w-25
+    {
+      width: 25% !important;
+    }
+
+    .bi-w-125
+    {
+      width: 12.5% !important;
+    }
+
+    .bi-w-625
+    {
+      width: 6.25% !important;
+    }
+
+.bi-w-1024
+{
+  width: 1024px !important;
+}
+
+.bi-w-max-25
+{
+  max-width: 25% !important;
+}
+
+.bi-w-max-50
+{
+  max-width: 50% !important;
+}
+
+.bi-w-max-75
+{
+  max-width: 75% !important;
+}
+
+.bi-w-max-100
+{
+  max-width: 100% !important;
+}
+
+.bi-w-max-128
+{
+  max-width: 128px !important;
+}
+
+.bi-w-max-256
+{
+  max-width: 256px !important;
+}
+
+    .bi-w-max-256-no-media
+    {
+      max-width: 256px !important;
+    }
+
+.bi-w-max-512
+{
+  max-width: 512px !important;
+}
+
+.bi-w-max-1024
+{
+  max-width: 1024px !important;
+}
+
+.bi-w-max-1
+{
+  max-width: 1rem !important;
+}
+
+.bi-w-max-2
+{
+  max-width: 2rem !important;
+}
+
+.bi-w-max-3
+{
+  max-width: 3rem !important;
+}
+
+.bi-w-max-4
+{
+  max-width: 4rem !important;
+}
+
+.bi-w-min-1024
+{
+  min-width: 1024px !important;
+}
+
+.bi-w-min-512
+{
+  min-width: 512px !important;
+}
+
+.bi-w-min-256
+{
+  min-width: 256px !important;
+}
+
+.bi-w-min-128
+{
+  min-width: 128px !important;
+}
+
+/* ************************** */
+/*  vvv POSITION: (x, y) vvv  */
+/* ************************** */
+
+.bi-relative
+{
+  position: relative !important;
+}
+
+    .bi-absolute-left-top /* POSITION: (x, y) */
+    {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      transform: translate(0%, 0%);
+    }
+
+        .bi-absolute-left-top-important /* POSITION: (x, y) */
+        {
+          position: absolute !important;
+          top: 0% !important;
+          left: 0% !important;
+          transform: translate(0%, 0%) !important;
+        }
+
+        .bi-absolute-left-top-overhang
+        {
+          position: absolute;
+          top: 0%;
+          left: 0%;
+          transform: translate(-100%, -100%);
+        }
+
+    .bi-absolute-left-center /* POSITION: (x, y) */
+    {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      transform: translate(0%, -50%);
+    }
+
+        .absolute-left-center-overhang
+        {
+          position: absolute;
+          top: 50%;
+          left: 0%;
+          transform: translate(-100%, -50%);
+        }
+
+    .bi-absolute-left-bottom /* POSITION: (x, y) */
+    {
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+      transform: translate(0%, 0%);
+    }
+
+        .bi-absolute-left-bottom-overhang
+        {
+          position: absolute;
+          bottom: 0%;
+          left: 0%;
+          transform: translate(-100%, 100%);
+        }
+
+    .bi-absolute-center-top
+    {
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+
+        .bi-absolute-center-top-1
+        {
+          position: absolute;
+          top: 1rem;
+          left: 50%;
+          transform: translate(-50%, 0%);
+        }
+
+        .bi-absolute-center-top-overhang
+        {
+          position: absolute;
+          top: 0%;
+          left: 50%;
+          transform: translate(-50%, -100%);
+        }
+
+    .bi-absolute-center-center
+    {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .bi-absolute-center-bottom
+    {
+      position: absolute;
+      bottom: 0%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+
+        .bi-absolute-center-bottom-overhang
+        {
+          position: absolute;
+          bottom: 0%;
+          left: 50%;
+          transform: translate(-50%, 100%);
+        }
+
+    .bi-absolute-right-top
+    {
+      position: absolute;
+      top: 0%;
+      right: 0%;
+      transform: translate(0%, 0%);
+    }
+
+        .bi-absolute-right-top-overhang
+        {
+          position: absolute;
+          top: 0%;
+          right: 0%;
+          transform: translate(100%, -100%);
+        }
+
+    .bi-absolute-right-center
+    {
+      position: absolute;
+      top: 50%;
+      right: 0%;
+      transform: translate(0%, -50%);
+    }
+
+        .bi-absolute-right-center-overhang
+        {
+          position: absolute;
+          top: 50%;
+          right: 0%;
+          transform: translate(100%, -50%);
+        }
+
+    .bi-absolute-right-bottom
+    {
+      position: absolute;
+      bottom: 0%;
+      right: 0%;
+      transform: translate(0%, 0%);
+    }
+
+        .bi-absolute-right-bottom-overhang
+        {
+          position: absolute;
+          bottom: 0%;
+          right: 0%;
+          transform: translate(100%, 100%);
+        }
+
+/* ************************** */
+/*  ^^^ POSITION: (x, y) ^^^  */
+/* ************************** */
+
+.bi-round-border
+{
+  border-radius: 1rem;
+}
+
+.bi-text-center
+{
+  text-align: center !important;
+}
+
+.bi-text-justify
+{
+  text-align: justify !important;
+}
+
+.bi-text-left
+{
+  text-align: left !important;
+}
+
+.bi-text-ellipsis
+{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: clip;
+}
+
+.bi-text-right
+{
+  text-align: right !important;
+}
+
+.bi-text-outline-light
+{
+  letter-spacing: 0.1rem;
+  text-shadow:
+    -1px -1px var(--white),
+    -1px 1px var(--white),
+    1px -1px var(--white),
+    1px 1px var(--white);
+}
+
+.bi-text-shadow-light
+{
+  letter-spacing: 0.1rem;
+  text-shadow: -1px -1px var(--white);
+}
+
+.bi-text-outline-dark
+{
+  letter-spacing: 0.1rem;
+  text-shadow:
+    -1px -1px var(--black),
+    -1px 1px var(--black),
+    1px -1px var(--black),
+    1px 1px var(--black);
+}
+
+.bi-text-shadow-dark
+{
+  letter-spacing: 0.1rem;
+  text-shadow: -1px -1px var(--black);
+}
+
+.bi-z-index-high
+{
+  z-index: var(--high) !important;
+}
+
+    .bi-z-index-higher
+    {
+      z-index: var(--higher) !important;
+    }
+
+    .bi-z-index-highest
+    {
+      z-index: var(--highest) !important;
+}
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * smartphone screen
+ */
+
+@media (max-width: 511px)
+{
+
+  table.bi-responsive-headless
+  {
+    display: block;
+  }
+
+      table.bi-responsive-headless tbody,
+      table.bi-responsive-headless tr,
+      table.bi-responsive-headless td
+      {
+        display: block;
+        width: 100%;
+      }
+
+      td.bi-responsive-headless
+      {
+        display: block;
+        width: 100%;
+      }
+
+  .bi-flexbox
+  {
+    flex-flow: column;
+    width: 100%;
+  }
+
+  /* ***************************************** */
+  /*  vvv FLEXBOX SWAP: column is now row vvv  */
+  /* ***************************************** */
+
+  .bi-flexbox-horizontal,
+  .bi-flexbox-horizontal-space,
+  .bi-flexbox-horizontal-space-around,
+  .bi-flexbox-horizontal-space-between
+  {
+    align-items: center;
+  }
+
+  .bi-flexbox-horizontal-left {
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .bi-flexbox-horizontal-right {
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .bi-flexbox-vertical,
+  .bi-flexbox-vertical-bottom,
+  .bi-flexbox-vertical-top
+  {
+    justify-content: center;
+  }
+
+  .bi-nowrap
+  {
+    white-space: unset;
+  }
+
+  /* ***************************************** */
+  /*  ^^^ FLEXBOX SWAP: column is now row ^^^  */
+  /* ***************************************** */
+
+  .bi-font-xxxl
+  {
+    font-size: var(--font-xxl) !important;
+  }
+
+      .bi-font-xxl
+      {
+        font-size: var(--font-xl) !important;
+      }
+
+      .bi-font-xl
+      {
+        font-size: var(--font-l) !important;
+      }
+
+      .bi-font-l
+      {
+        font-size: var(--font-m) !important;
+      }
+
+      .bi-font-m
+      {
+        font-size: var(--font-s) !important;
+      }
+
+      .bi-font-s
+      {
+        font-size: var(--font-xs) !important;
+      }
+
+      .bi-font-xs
+      {
+        font-size: var(--font-xxs) !important;
+      }
+
+  .bi-m-1
+  {
+    margin: 1rem 0rem;
+  }
+
+  .bi-ml-04,
+  .bi-ml-1,
+  .bi-mr-1,
+  .bi-mr-04
+  {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+	
+	.bi-popup-parent
+	{
+		/* SET tabindex=0 ON YOUR <parent> */
+		pointer-events: none;
+		
+		position: relative;
+		flex: 0 0 100% !important;
+		width: 100% !important;
+		text-align: center;
+	}
+	
+	.bi-popup-parent:focus-within .bi-popup-child-bottom-right,
+	.bi-popup-parent:focus-within .bi-popup-child-bottom-center,
+	.bi-popup-parent:focus-within .bi-popup-child-bottom-left,
+	.bi-popup-parent:focus-within .bi-popup-child-center-right,
+	.bi-popup-parent:focus-within .bi-popup-child-center-center,
+	.bi-popup-parent:focus-within .bi-popup-child-center-left,
+	.bi-popup-parent:focus-within .bi-popup-child-top-right,
+	.bi-popup-parent:focus-within .bi-popup-child-top-center,
+	.bi-popup-parent:focus-within .bi-pup-child-top-left
+	{
+		position: absolute;
+		top: 0%;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		z-index: var(--higher);
+	}
+	
+	.bi-popup-parent:focus-within .bi-popup-child-single,
+	.bi-popup-parent:focus-within .bi-popup-child-binary,
+	.bi-popup-parent:focus-within .bi-popup-child-quart,
+	.bi-popup-parent:focus-within .bi-popup-child-octal,
+	.bi-popup-parent:focus-within .bi-popup-child-hex,
+	.bi-popup-parent:focus-within .bi-popup-child-auto
+	{
+		width: 85vw;
+	}
+
+  .bi-vw-100,
+  .bi-vw-50,
+  .bi-vw-25,
+  .bi-vw-125,
+  .bi-vw-625
+  {
+    width: 100vw !important;
+  }
+
+      .bi-vw-max-100,
+      .bi-vw-max-50
+      {
+        max-width: 100vw !important;
+      }
+
+  .bi-w-1024
+  {
+    width: 100% !important;
+  }
+
+  .bi-w-75,
+  .bi-w-50,
+  .bi-w-25,
+  .bi-w-125,
+  .bi-w-625
+  {
+    width: 100% !important;
+  }
+
+  /* flex-flow: column; may break max-width styling */
+  .bi-w-max-1024,
+  .bi-w-max-512,
+  .bi-w-max-256
+  {
+    max-width: 511px !important;
+  }
+
+  .bi-w-min-1024,
+  .bi-w-min-512
+  {
+    min-width: 0rem !important;
+  }
+	
+}
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * tablet screen
+ */
+
+/* Decrease Div Number per Row = OK */
+/* Increase Div Number per Row = Bad, Veery, Veeery BAD! */
+@media (min-width: 512px) and (max-width: 1023px)
+{
+
+  table.bi-responsive-headless
+  {
+    display: block;
+  }
+
+      table.bi-responsive-headless tbody,
+      table.bi-responsive-headless tr,
+      table.bi-responsive-headless td
+      {
+        display: block;
+        width: 100%;
+      }
+
+      td.bi-responsive-headless
+      {
+        display: block;
+        width: 100%;
+      }
+
+  .bi-quart
+	{
+    flex: 0 0 50%;
+  }
+	
+  .bi-quart-fill
+	{
+    flex: 1 0 50%;
+  }
+
+  .bi-octal
+	{
+    flex: 0 0 25%;
+  }
+
+  .bi-octal-fill
+	{
+    flex: 1 0 25%;
+  }
+
+  .bi-hex
+	{
+    flex: 0 0 12.5%;
+  }
+
+  .bi-hex-fill
+	{
+    flex: 1 0 12.5%;
+  }
+  
+  .bi-popup-parent:focus-within .bi-popup-child-quart
+  {
+    width: 50vw;
+  }
+  
+  .bi-popup-parent:focus-within .bi-popup-child-octal
+  {
+    width: 25vw;
+  }
+  
+  .bi-popup-parent:focus-within .bi-popup-child-hex
+  {
+    width: 12.5vw;
+  }
+
+  .bi-w-1024
+  {
+    width: 100% !important;
+  }
+
+  .bi-w-min-1024,
+  .bi-w-min-512
+  {
+    min-width: 0rem !important;
+  }
+
+}
+
+/**
+ ******************************************************************************
+ */
+
+/**
+ * wide screen
+ */
+
+@media (min-width: 1024px)
+{
+  .bi-container
+  {
+    margin: 0rem auto;
+    max-width: 2048px;
+  }
+
+}
