@@ -331,9 +331,11 @@ class Question extends Model implements IParameterStringResolver
       // verification: loop each entry
       for ($j = 0; $j < count($randomDepartures); $j++)
       {
-        // verification
-        if ($randomDepartures[$j]->id == $lastDeparture->id)
+        // verify: time (we dont want 2 same options in a dropdown)
+        if ($randomDepartures[$j]->departure == $lastDeparture->departure)
         {
+          dump($randomDepartures[$j]);
+          dump($lastDeparture);
           // verification: fail
           $isDuplicate = true;
           break;
